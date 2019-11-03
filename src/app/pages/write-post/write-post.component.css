@@ -1,0 +1,38 @@
+input,textarea{
+    border: none;
+    border-bottom: 1px solid rgb(126, 123, 123);
+
+    background: transparent;
+    outline: none;
+}
+/* input[type="file"]{
+  
+} */
+
+.addimage{
+    margin-top: 8px;
+    background: rgb(104, 21, 49);
+    border-radius: 6px;
+    color: aliceblue;
+    border: 0px;
+    width: 122px;
+    height: 40px;
+}
+.img-div{
+    margin-top: 8px;
+    border: 4px rgb(104, 21, 49) solid;
+    width: 210px ;
+}
+.post{
+    margin-left: 20px;
+    margin-top: 90px
+}
+.write{
+    height: 900px;
+    width: 1000px;
+    box-shadow: 2px 2px 5px rgb(104, 21, 49);
+    margin-left: 300px
+}
+editor{
+    height: 300px
+}

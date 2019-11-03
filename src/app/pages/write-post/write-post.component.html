@@ -1,0 +1,50 @@
+<div class="write">
+<div class="post col-sm-10">
+  <form (ngSubmit)="submitPost(ad)" #ad="ngForm">
+    <div class="form-group">
+    <input type="text"  [(ngModel)]="fetch" name="title" required [value]="fetch" class="form-control ">
+</div>
+<div class="form-group">
+
+    <p>Category*</p>
+  <select class="form-control"  ngModel name="category" required >
+    <option  selected value="" >{{cat}}</option>
+    <option *ngFor="let get of value" [ngValue]="get.name" >{{get.name}}</option>
+  </select>
+  </div>
+
+<div class="form-group">
+    <!-- <textarea type="text" name="article" ngModel placeholder="Write Article" class=" form-control" required></textarea>  -->
+    <editor apiKey="heek2n8whz6j49gy85qpuomr5z9unh7pjlruw6vhe7363ev7" name="article" ngModel placeholder="Write Article" class=" form-control" required [init]="{
+      height: 280,
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+      ],
+      toolbar:
+        'undo redo | formatselect | bold italic backcolor | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | removeformat | help'
+    }"></editor> 
+    </div>
+    <div class="form-group">
+      <p>Save As*</p>
+      <select class="form-control"  ngModel name="publish_type" required >
+        <option value="publish">Publish</option>
+        <option value="draft">Draft</option>
+      </select>
+    </div>
+    <div class="form-group">
+<p>Add Image*</p>
+<input type="file" (change)="uploadPic($event.target.files)" required>
+<div class="img-div">
+  <img [src]="imageUrl" alt="" width="200px" height="130px">
+</div>
+<button type="button" (click)="addImage()" class="addimage">Add Image</button>
+    </div>
+    <button (click)="submitPost()" class="btn btn-warning">Submit Article</button>
+  </form>
+</div>
+</div>

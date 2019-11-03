@@ -1,0 +1,32 @@
+.blogPart{
+    margin-top: 30px;
+    /* background: rgb(245, 240, 240) */
+}
+
+.blog-header h2{
+    margin-top: 100px;
+    color: rgb(245, 235, 235);
+    font-size: 50px
+}
+button{
+    width: 150px;
+    background-color: black;
+    border: 0px;
+    height: 50px;
+    border-radius: 15px
+}
+button a{
+    color: #fff;
+    text-decoration: none
+}
+header{
+    margin-top: -15px;
+    height: 80vh;
+    background-image: linear-gradient(rgba(90, 84, 21, 0.7),rgba(118, 16, 128, 0.7)),url(../../../assets/bgex3.jpg);
+    background-size: cover;
+    font-family: 'KoHo', sans-serif;
+	width: 100%;
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-attachment: fixed
+}

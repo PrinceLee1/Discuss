@@ -1,0 +1,58 @@
+<div class="container-fluid home">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card1">
+          <h3><b>POSTS</b></h3>
+          <h5 class="post"><a routerLink="posts">View</a></h5>
+          <p>Number of posts  : {{got[0]}}</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="card2">
+            <h3><b>DRAFTS</b></h3>
+            <h5 class="draft"><a href="">View</a></h5>
+
+            <p>Drafted posts  : {{got[1]}}</p>
+
+          </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card3">
+              <h3><b>PUBLISHED</b></h3>
+              <h5 class="pub"><a href="">View</a></h5>
+
+              <p>Articles Published  : 5</p>
+
+            </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="card4">
+                <h3><b>COMMENTS</b></h3>
+                <h5 class="com"><a href="">View</a></h5>
+
+                <p>Comments on posts  : 35</p>
+
+              </div>
+            </div>  
+    </div>
+  </div>
+ <div class="container-fluid person" >
+<h4 class="text-center">PERSONAL INFO</h4>
+<div class="row">
+  <div class="col-md-7">
+<ul>
+  <li><b>Full Name</b>: <span>{{value[0]}} {{value[1]}}</span></li>
+  <li><b>Email</b>: <span>{{value[2]}}</span></li>
+  <li><b>Joined on</b>: <span>{{value[3]}}</span></li>
+</ul>
+</div>
+<div class="col-md-5 share">
+  <h5 class="text-center"><b>Share Posts on:</b></h5>  <hr>
+<div class="fb">Facebook</div>
+<div class="gm">Google Mail</div>
+<div class="twi">Twitter</div>
+<div class="what">WhatsApp</div>
+
+</div>
+</div>
+ </div>

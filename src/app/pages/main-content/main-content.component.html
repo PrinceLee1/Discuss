@@ -1,0 +1,15 @@
+
+<div class="container">
+  <div class="row" *ngFor="let get of value">
+    <div class="col-md-10 main" >
+      <h2>{{get.title}}</h2>
+      <p>{{get.uploadTime}}</p>
+      <p>Written by :<span style="color:rgb(85, 32, 82) "> {{get.author}}</span></p>
+      <img src="../../../assets/bgex3.jpg" width="600px" height="300px">
+      <div [innerHtml]="get.article" class="arti"></div>
+    </div>
+    <!-- <div class="col-sm-4 recent">
+      <h4>Recent Posts</h4>
+    </div> -->
+  </div>
+</div>

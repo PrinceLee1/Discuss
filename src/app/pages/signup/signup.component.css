@@ -1,0 +1,62 @@
+.card{
+    height: 480px;
+    width: 950px;
+    margin-left: 200px;
+    margin-top: 100px;
+    box-shadow: 0px 4px 6px 2px gray;
+    box-sizing: border-box
+}
+img{
+    margin-left: 100px;
+    margin-top: 20px
+}
+
+form{
+    margin-left: 200px;
+  transform: translateY(-100%)
+}
+h1{
+    margin-top: 10px;
+    font-style: italic;   
+}
+p{
+    font-size: 20px;
+    margin-top: 3%
+}
+small{
+    margin-left: 550px;
+    transform: translateY(-102px)
+}
+a{
+    text-decoration-color: gray;
+    color: rgb(85, 32, 82)
+}
+button{
+    margin: 0px 10px 0px 350px;
+    width: 300px;
+    background: linear-gradient(rgb(104, 21, 49),rgb(94, 41, 91));
+    color: aliceblue;
+}
+button:hover{
+    color: aliceblue;   
+}
+input[type="name"] {
+    width: 300px;
+   margin: 20px 10px 0px 350px;
+
+}
+input[type="surname"] {
+    width: 300px;
+   margin: 0px 10px 0px 350px;
+
+}
+input[type="text"] {
+    width: 300px;
+   margin: 0px 10px 0px 350px;
+
+}
+input[type="password"] {
+    width: 300px;
+   margin: 0px 10px 0px 350px;
+
+}

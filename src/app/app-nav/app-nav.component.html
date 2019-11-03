@@ -1,0 +1,27 @@
+<nav class="first-nav">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><b>Discuss</b></a><span><li><a routerLink="/login"><i class="fas fa-search"></i></a></li> </span><span><li><a routerLink=""><i class="far fa-bell"></i></a></li> </span><span class="upgrade"><a href=""> Upgrade</a></span><span><img src="../../assets/banner (1).jpg" alt="img-profile" width="50px" class="img-circle"></span>
+      </div>
+      <!-- <ul>
+      <li><a routerLink="/login"><b>Tricks</b></a></li> 
+</ul> -->
+</nav>
+<nav class="sec-nav" >
+  <div class="div" >
+ <span><b><a href="" class="home" > HOME</a></b></span><span (click)="go('Tricks')">TRICKS</span><span (click)="go('Technology')"> TECH</span><span (click)="go('Education')">EDUCATION</span><span (click)="go('Innovations')">INNOVATIONS</span><span (click)="go('Promotion')">PROMOTION</span><span (click)="go('Entertainment')"> ENTERTAINMENT</span><span class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">MORE CATEGORIES
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li (click)="go('Innovations')">DEVICES</li><br>
+    <li (click)="go('Sex')">SEX</li><br>
+    <li (click)="go('Offers')">OFFERS</li><br>
+    <li (click)="go('Books')">BOOKS</li><br>
+    <li (click)="go('Wild-Life')">WILD-LIFE</li><br>
+    <li (click)="go('Religion')">RELIGION</li><br>
+    <li (click)="go('Politics')">POLITICS</li><br>
+
+  </ul>
+</span><hr>
+</div>
+</nav>
+<router-outlet></router-outlet>

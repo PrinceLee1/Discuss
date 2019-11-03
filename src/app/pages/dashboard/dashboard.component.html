@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="sidenav" *ngIf="show let hide = true">
+    <span >Welcome</span>  <span> {{value}}</span>
+    <ul>
+        <li><fa name="home"></fa><a routerLink="/dashboard">Home</a></li>
+      <li><i class="fas fa-tachometer-alt"></i><a routerLink="/boosts">Boosts</a></li>
+      <li><i class="fas fa-user-edit"></i><a routerLink="posts">Write Article</a></li>
+      <li><i class="fas fa-sign-out-alt"></i><a href="/login">Log Out</a></li>
+      <li><i class="fas fa-user-cog"></i><a href="">Settings</a></li>
+
+    </ul>
+    </div>
+
+    <div class="container-fluid main-content">
+        <nav class="navbar fixed-top our-nav"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" (click)="move()">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+        </nav>   
+      
+        
+   <router-outlet></router-outlet>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="container-fluid">
+<div class="card">
+  <h2 class="text-center">Great, You are Back.</h2>
+<p class="text-center">Log in to get personalized story recommendations,<br> follow authors and topics you love, and interact with stories.</p>
+<img src="../../../assets/undraw_mobile_login_ikmv.svg" width="300px" max-height="300px"> 
+  <form name="loginForm">
+    <div class="form-group">
+      <input type="text" name="email" [(ngModel)]="email" class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="password" name="password" [(ngModel)]="password" class="form-control" placeholder="Password">
+    </div>
+    <button (click)="onSubmit()" class="btn btn-default">Log In</button>
+  </form>
+  <small class="text-center">Dont have an account? <span><a routerLink="/signup"><b>Sign Up</b></a></span></small>
+</div>
+</div>
