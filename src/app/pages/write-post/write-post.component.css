@@ -1,27 +1,29 @@
-input,textarea{
+/* input,textarea{
     border: none;
-    border-bottom: 1px solid rgb(126, 123, 123);
+    border-bottom: 1px solid rgb(65, 27, 27);
 
     background: transparent;
     outline: none;
-}
-/* input[type="file"]{
-  
 } */
+.form-group{
+  margin-left: 60px
+}
 
 .addimage{
     margin-top: 8px;
-    background: rgb(104, 21, 49);
+    background: rgb(85, 32, 82);
     border-radius: 6px;
     color: aliceblue;
     border: 0px;
-    width: 122px;
+    width: 50%;
     height: 40px;
+    margin-left: 180px
 }
 .img-div{
     margin-top: 8px;
-    border: 4px rgb(104, 21, 49) solid;
+    border: 4px rgb(85, 32, 82) solid;
     width: 210px ;
+    margin-left: 300px
 }
 .post{
     margin-left: 20px;
@@ -29,10 +31,19 @@ input,textarea{
 }
 .write{
     height: 900px;
-    width: 1000px;
-    box-shadow: 2px 2px 5px rgb(104, 21, 49);
-    margin-left: 300px
+    width: 90%;
+    /* box-shadow: 2px 2px 5px rgb(104, 21, 49); */
+    /* margin-left: 100px; */
+    border-radius: 12px
+}
+.proress{
+    position: relative;
+    top: 30px
 }
 editor{
     height: 300px
+}
+.btn{
+    width: 60%;
+    margin-left: 180px
 }

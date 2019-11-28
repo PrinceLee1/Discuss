@@ -1,12 +1,27 @@
-<nav class="first-nav">
+<!-- <nav class="first-nav navbar navbar-expand-lg shadow">
     <div class="navbar-header">
         <a class="navbar-brand" href="#"><b>Discuss</b></a><span><li><a routerLink="/login"><i class="fas fa-search"></i></a></li> </span><span><li><a routerLink=""><i class="far fa-bell"></i></a></li> </span><span class="upgrade"><a href=""> Upgrade</a></span><span><img src="../../assets/banner (1).jpg" alt="img-profile" width="50px" class="img-circle"></span>
       </div>
-      <!-- <ul>
-      <li><a routerLink="/login"><b>Tricks</b></a></li> 
-</ul> -->
-</nav>
-<nav class="sec-nav" >
+  
+</nav> -->
+<!-- <nav class="navbar navbar-expand-lg  first-nav shadow">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"  style="border: 2px solid white">
+        <span class="navbar-toggler-icon" style="color: white"></span>
+      </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">  
+      <li class="nav-item">
+          <a routerLink="/login"><img src="../../assets/logo.png" width="40px"></a>
+      </li>
+      <li class="nav-item">
+          <a href=""> Upgrade</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav> -->
+<!-- <nav class="sec-nav" >
   <div class="div" >
  <span><b><a href="" class="home" > HOME</a></b></span><span (click)="go('Tricks')">TRICKS</span><span (click)="go('Technology')"> TECH</span><span (click)="go('Education')">EDUCATION</span><span (click)="go('Innovations')">INNOVATIONS</span><span (click)="go('Promotion')">PROMOTION</span><span (click)="go('Entertainment')"> ENTERTAINMENT</span><span class="dropdown">
   <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">MORE CATEGORIES
@@ -23,5 +38,30 @@
   </ul>
 </span><hr>
 </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sec-nav ">
+  <div class="navbar-brand">
+      <a href="#"><img src="../../assets/logo.png" width="50px"></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+   <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+      <li class="nav-item ">
+        <a href="#" class="sub">Subscribe</a>    
+        </li>
+      <li class="nav-item" >
+        <a href="articles"> Write</a>    
+      </li>
+      <li class="nav-item">
+          <a href="login"> Sign In</a>    
+        </li>
+        <button type="button" class="started">Get Started</button>
+    </ul>
+
+  </div>
 </nav>
 <router-outlet></router-outlet>

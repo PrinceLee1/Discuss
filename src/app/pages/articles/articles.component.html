@@ -1,0 +1,50 @@
+
+ <nav class="sec-nav shadow" >
+  <div class="div" >
+ <span><b><a href="" class="home" > HOME</a></b></span><span (click)="go('Tricks')">TRICKS</span><span (click)="go('Technology')"> TECH</span><span (click)="go('Education')">EDUCATION</span><span (click)="go('Innovations')">INNOVATIONS</span><span (click)="go('Promotion')">PROMOTION</span><span (click)="go('Entertainment')"> ENTERTAINMENT</span><span class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">MORE CATEGORIES
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li (click)="go('Innovations')">DEVICES</li><br>
+    <li (click)="go('Sex')">SEX</li><br>
+    <li (click)="go('Offers')">OFFERS</li><br>
+    <li (click)="go('Books')">BOOKS</li><br>
+    <li (click)="go('Wild-Life')">WILD-LIFE</li><br>
+    <li (click)="go('Religion')">RELIGION</li><br>
+    <li (click)="go('Politics')">POLITICS</li><br>
+
+  </ul>
+</span><hr>
+</div>
+</nav> 
+<div class="container-fluid blogPart">
+  <div class="row">
+    <div class="col-md-5 col-sm-5" *ngFor="let get of value">
+      <div routerLink="/main-content/{{get.blog_id}}">
+       <span> <img  [src]="get.image" width="100px"></span>
+          <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
+          <p (click)="hov()">by : {{get.author}}</p>
+          <small>an hour ago</small> . <span>20 min read</span>
+      </div>
+      
+    </div>
+    <div class="col-md-2 col-sm-2" *ngFor="let get of value">
+        <div routerLink="/main-content/{{get.blog_id}}">
+         <span> <img  [src]="get.image" width="100px"></span>
+            <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
+            <p (click)="hov()">by : {{get.author}}</p>
+            <small>an hour ago</small> . <span>20 min read</span>
+        </div>
+        
+      </div>
+      <div class="col-md-5 col-sm-5" *ngFor="let get of value">
+        <div routerLink="/main-content/{{get.blog_id}}">
+         <span> <img  [src]="get.image" width="100px"></span>
+            <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
+            <p (click)="hov()">by : {{get.author}}</p>
+            <small>an hour ago</small> . <span>20 min read</span>
+        </div>
+        
+      </div>
+</div>
+</div>

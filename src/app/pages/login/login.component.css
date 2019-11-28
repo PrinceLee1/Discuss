@@ -2,17 +2,17 @@
 .card{
     height: 480px;
     width: 950px;
-    margin-left: 16%;
+    margin-left: 100px;
     margin-top: 30px;
     box-shadow: 0px 4px 6px 2px gray;
-    box-sizing: border-box
+    /* box-sizing: border-box */
 }
 img{
     margin-left: 150px;
     margin-top: 20px
 }
 p{
-    font-size: 20px;
+    font-size:25px;
     margin-top: 3%
 }
 form{
@@ -21,19 +21,24 @@ form{
 }
 h2{
     margin-top: 2%;
-    font-style: italic;   
+    font-style: italic;  
+    font-size: 50px 
 }
-small{
-    margin-left: 450px;
+small[class="text-center"]{
+    margin-left: 600px;
     transform: translateY(-260px)
 }
+/* .forgot{
+    margin-left: 550px;
+    transform: translateY(-279px)
+} */
 a{
     text-decoration-color: gray;
     color: rgb(85, 32, 82)}
 button{
     margin: 0px 10px 0px 350px;
     width: 300px;
-    background: linear-gradient(rgb(104, 21, 49),rgb(94, 41, 91));
+    background:rgb(85, 32, 82);
     color: aliceblue;
 }
 button:hover{
@@ -48,4 +53,29 @@ input[type="password"] {
     width: 300px;
    margin: 0px 10px 0px 350px;
 
+}
+
+/**********MEDIA QUERIES ***********/
+@media screen and (max-width:375px){
+    h2{
+        font-size: 28px
+    }p{font-size: 18px}
+    .card{
+        margin-left: 5px;
+        max-width: 330px;
+        height:730px;
+    }
+    img{
+        margin-left: 33px;
+        width: 250px
+    }
+    form{
+transform: translateX(-536px)
+    }
+    small{
+        transform: translateX(-338px);
+        display: grid;
+        font-size: 15px;
+        text-transform: capitalize
+    }
 }

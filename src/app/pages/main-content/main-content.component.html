@@ -1,15 +1,34 @@
 
 <div class="container">
-  <div class="row" *ngFor="let get of value">
-    <div class="col-md-10 main" >
+  <div class="row">
+    <div class="col-lg-9 main col-md-6" *ngFor="let get of value" >
       <h2>{{get.title}}</h2>
-      <p>{{get.uploadTime}}</p>
       <p>Written by :<span style="color:rgb(85, 32, 82) "> {{get.author}}</span></p>
-      <img src="../../../assets/bgex3.jpg" width="600px" height="300px">
+      <p>Posted on :  {{get.uploadTime}}</p>
+     <a [href]="get.image"><img [src]="get.image" width="100%" height="310px" class="shadow"></a> 
       <div [innerHtml]="get.article" class="arti"></div>
     </div>
-    <!-- <div class="col-sm-4 recent">
-      <h4>Recent Posts</h4>
-    </div> -->
+    <div class="col-lg-3 col-md-6 recent shadow ">
+      <h4>Recent Posts</h4><hr>
+      <div class="container">
+        <div class="row"  *ngFor="let recent of vale">
+          <div class="col-sm-6">
+            <img [src]="recent.image" width="110px" style="margin-top: 8px" >
+          </div>
+          <div class="col-sm-6">
+            <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+        </div>
+        </div>
+      </div>
+      <div class="container cats" *ngFor="let recent of vale">
+        <h4>Categories</h4><hr>
+        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+
+      </div>
   </div>
+</div>
 </div>

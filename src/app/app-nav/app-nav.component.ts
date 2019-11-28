@@ -15,20 +15,4 @@ export class AppNavComponent implements OnInit {
   ngOnInit() {
   }
 
-  go(x){
-    // alert(x);
-    let xLocal = {
-      idOne : x
-    }
-    this.localStorage.setItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h',xLocal).subscribe(
-      (res)=>{
-        if(res == true){
-          this.routes.navigateByUrl('/',{skipLocationChange:true}).then(()=>
-          this.routes.navigate(['/home'])
-          
-          );
-        }
-      }
-    )
-  }
 }

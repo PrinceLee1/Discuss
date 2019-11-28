@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApicallsService } from 'src/app/services/apicall.service';
 import { Router,ActivatedRoute} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+// import { NgProgress } from 'ngx-progressbar';
+import { Observable } from 'rxjs';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NgForm } from '@angular/forms';
@@ -11,6 +13,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './write-post.component.html',
   styleUrls: ['./write-post.component.css']
 })
+
 export class WritePostComponent implements OnInit {
 public article;title;category;publish_type;formInputs:any;
   getData: any;
@@ -24,9 +27,21 @@ public article;title;category;publish_type;formInputs:any;
   fetch: any;
   cat: any;
 
-  constructor(private apicall : ApicallsService,private routes : Router,private toaster:ToastrService,private cookies : CookieService,private activatedRoute : ActivatedRoute,private activedRoute:ActivatedRoute) { }
+
+prog = false;
+
+  constructor(private apicall : ApicallsService,
+    private routes : Router,
+    private toaster:ToastrService,
+    private cookies : CookieService,
+    private activatedRoute : ActivatedRoute,
+    private activedRoute:ActivatedRoute,
+    // public ngProgress: NgProgress
+    ) { }
 submitPost(x:NgForm){
-  console.log(x.value.article);
+  // console.log(x.value.article);
+  // this.ngProgress.start();
+  // this.prog = true;
   this.blog_id = this.activatedRoute.snapshot.paramMap.get('id');
   let blog ={
     title : this.fetch,
@@ -44,32 +59,38 @@ submitPost(x:NgForm){
        this.toaster.error(val['info'],'Security Center');
       }else if(val['code'] == '00'){
         this.toaster.success(val['info'],'Security Center');
-        this.routes.navigate(['']);
+// this.prog = false;
+        this.routes.navigate(['dashboard/posts']);
       }
       
     });
+
 }
 uploadPic(file:FileList){
-console.log(file)
+// console.log(file);
+
 this.fileToUpload = file.item(0);
 var imgReader = new FileReader();
 imgReader.onload =(event:any) =>{
   this.imageUrl = event.target.result;
 }
 imgReader.readAsDataURL(this.fileToUpload)
+// this.prog = false;
 }
 addImage(){
+  this.prog = true;
 this.formData = new FormData();
 this.formData.append("image",this.fileToUpload,this.fileToUpload.name),
 this.formData.append("blog_id",this.blog_id),
 this.formData.append("key","11");
 this.formData.append('id',this.cookieValue);
-console.log(this.formData);
+// console.log(this.formData);
 
 this.apicall.sendData(this.formData).subscribe(
-  (res)=>{console.log(res)},
+  (res)=>{ this.prog = false;this.toaster.success('Image uploaded successfully','Security Center')},
   
 )
+
 }
   ngOnInit() {
     this.blog_id = this.activatedRoute.snapshot.paramMap.get('id');

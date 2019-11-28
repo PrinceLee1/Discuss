@@ -2,7 +2,7 @@
 <div class="card">
   <h1 class="text-center">Let's Get You Started.</h1>
   <p class="text-center"> <span style="color:rgb(85, 32, 82) "><b>Hi,</b></span> Create an account to receive great stories in your inbox,<br> personalize your homepage, and follow authors and topics that you love.</p>
-  <img src="../../../assets/undraw_authentication_fsn5 (1).svg" width="300px" max-height="300px">
+  <img src="../../../assets/undraw_authentication_fsn5 (1).svg" width="300px" max-height="300px" alt="signup_svg">
 <div class="form">
     <form name="signupForm">
       <div class="form-group">
@@ -18,8 +18,10 @@
         <input type="password" name="password" [(ngModel)]="password"class="form-control" placeholder="Password" >
       </div>
       <button (click)="onSubmit()" class="btn btn-default">Sign Up</button>
+      <small class="text-center">Already have an account? <span><a routerLink="/login"><b>Log In</b></a></span></small>
+
     </form>
-    <small class="text-center">Already have an account? <span><a routerLink="/login"><b>Log In</b></a></span></small>
+    <!-- <small class="text-center">Already have an account? <span><a routerLink="/login"><b>Log In</b></a></span></small> -->
   </div>
   </div>
   </div>

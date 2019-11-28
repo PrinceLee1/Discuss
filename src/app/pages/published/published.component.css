@@ -1,0 +1,7 @@
+a,h2{
+    color: rgb(85, 32, 82);
+    text-decoration: none
+}
+i[class="fas fa-trash-alt"]:hover{
+    color: rgb(206, 14, 56);
+}

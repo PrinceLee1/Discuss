@@ -1,28 +1,29 @@
-.first-nav{
+/* .first-nav{
      box-shadow: 0px 0px 3px 0px rgb(173, 125, 125);
     background: linear-gradient(rgb(104, 21, 49),rgb(94, 41, 91));
-}
+} */
 
 .sec-nav{
-    margin-top: 10px;
-    /* margin-left: 150px; */
     position: -webkit-sticky;
     position: sticky;
     top: 0;
 z-index: 1;   
- background-color: #f9faf9;
-  
+background: transparent;
+border-top: 4px solid rgb(104, 21, 49)
 }
-
-.sec-nav span , .home{
+.navbar-toggler{
+    border: none;font-size: 35px;
+    color: rgb(104, 21, 49)
+}
+/* .sec-nav span , .home{
     margin-left: 50px;
     color: rgb(104, 21, 49);
     margin-top:150px;
     cursor: pointer;
-}
+} */
 .navbar-brand{
-    color: rgb(206, 132, 14);
-    margin-left: 200px
+
+    margin-left: 50px
 } 
 .img-circle{
     margin-left: 20px;
@@ -35,12 +36,15 @@ z-index: 1;
     border: 1px white solid;
     text-decoration: none
 }
+.nav-item a{
+margin-left: 50px
+}
 li {
     display: inline-block;
      margin-top: 10px;
 }
 i[class="fas fa-search"]{
-    margin-left: 650px
+    margin-left: 250px
 }
 i[class="far fa-bell"]{
     margin-left: 40px
@@ -48,26 +52,29 @@ i[class="far fa-bell"]{
 li a{
     display: block ;
     text-decoration: none;
-    color: rgb(235, 231, 226);
+    color: rgb(104, 21, 49);
 }
 li a :hover{
     transition: 0.4s all ease-in;
     color: rgb(197, 184, 184);
 }
-.dropdown-menu{
-background:  linear-gradient(rgba(90, 84, 21, 0.7),rgba(118, 16, 128, 0.7));  
-  /* width: 250px */
+
+.started{
+    border: 0px;
+    background: black;
+    color: #f9faf9;
+    margin-left: 20px;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px
 }
-.dropdown-menu :hover {
-    /* background-color: rgb(255, 255, 255); */
-    color: rgb(104, 21, 49);
-    transition: 0.4s ease-out;
+
+span{
+    margin-left: 35px;
+    cursor: pointer;
+    color: rgb(104, 21, 49)
 }
-.btn{
-    background: linear-gradient(rgb(104, 21, 49),rgb(94, 41, 91));
-    color: #f9faf9
-}
-.dropdown-menu li{
-    color: aliceblue;
-    margin-left: 50px
-}
+
+/* @media screen and (max-width:375px){
+ img
+} */

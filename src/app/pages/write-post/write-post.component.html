@@ -1,7 +1,10 @@
-<div class="write">
-<div class="post col-sm-10">
+
+<div class="write ">
+<div class="post col-md-12 col-sm-6">
+
+
   <form (ngSubmit)="submitPost(ad)" #ad="ngForm">
-    <div class="form-group">
+    <div class="form-group" >
     <input type="text"  [(ngModel)]="fetch" name="title" required [value]="fetch" class="form-control ">
 </div>
 <div class="form-group">
@@ -32,6 +35,7 @@
     <div class="form-group">
       <p>Save As*</p>
       <select class="form-control"  ngModel name="publish_type" required >
+          <option selected disabled>---Select--</option>
         <option value="publish">Publish</option>
         <option value="draft">Draft</option>
       </select>
@@ -39,12 +43,16 @@
     <div class="form-group">
 <p>Add Image*</p>
 <input type="file" (change)="uploadPic($event.target.files)" required>
+
 <div class="img-div">
   <img [src]="imageUrl" alt="" width="200px" height="130px">
+  <!-- <mat-spinner *ngIf="prog"></mat-spinner> -->
+  <mat-progress-bar mode="indeterminate" color="warn"  *ngIf="prog" ></mat-progress-bar> 
+
 </div>
-<button type="button" (click)="addImage()" class="addimage">Add Image</button>
+<button type="button" (click)="addImage()" class="addimage" >Add Image</button>
     </div>
-    <button (click)="submitPost()" class="btn btn-warning">Submit Article</button>
+    <button (click)="submitPost()" class="btn btn-warning" >Submit Article</button>
   </form>
 </div>
 </div>

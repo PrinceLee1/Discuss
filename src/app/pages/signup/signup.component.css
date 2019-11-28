@@ -2,7 +2,7 @@
     height: 480px;
     width: 950px;
     margin-left: 200px;
-    margin-top: 100px;
+    margin-top: 50px;
     box-shadow: 0px 4px 6px 2px gray;
     box-sizing: border-box
 }
@@ -13,7 +13,7 @@ img{
 
 form{
     margin-left: 200px;
-  transform: translateY(-100%)
+  transform: translateY(-85%)
 }
 h1{
     margin-top: 10px;
@@ -24,8 +24,8 @@ p{
     margin-top: 3%
 }
 small{
-    margin-left: 550px;
-    transform: translateY(-102px)
+    margin-left: 400px;
+    /* transform: translateY(-260px) */
 }
 a{
     text-decoration-color: gray;
@@ -59,4 +59,28 @@ input[type="password"] {
     width: 300px;
    margin: 0px 10px 0px 350px;
 
+}
+/**********MEDIA QUERIES ***********/
+@media screen and (max-width:375px){
+    h2{
+        font-size: 28px
+    }p{font-size: 18px}
+    .card{
+        margin-left: 3px;
+        max-width: 330px;
+        height:800px;
+    }
+    img{
+        margin-left: 33px;
+        width: 250px
+    }
+    form{
+transform: translateX(-536px)
+    }
+    small{
+        transform: translateX(60px);
+        display: grid;
+        font-size: 15px;
+        text-transform: capitalize
+    }
 }

@@ -3,7 +3,8 @@
 
 *{
     /* font-family: 'Nanum Myeongjo', serif; */
-    font-family: 'El Messiri', sans-serif;
+    /* font-family: 'El Messiri', sans-serif; */
+    font-family:  medium-marketing-display-font, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 .modal{
     background-color: rgba(0, 0, 0, 0.8);

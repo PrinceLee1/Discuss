@@ -28,26 +28,32 @@
       </div>
     </div>
   </div>
-
-<button type="button" class="btn btn-warning mod" data-toggle="modal" data-target="#exampleModalCenter">
-    Add Article
+ <div class="container">
+<button type="button" class=" mod" data-toggle="modal" data-target="#exampleModalCenter">
+    Write Post
   </button>
+ 
 <table class="table">
-
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Title</th>
-      <th scope="col">Article</th>
       <th scope="col">Category</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+
+
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let get of value">
-      <th scope="row" class="elipse">{{get.id}}</th>
-      <td class="elipse"><a href="main-content">{{get.title}}</a></td>
-      <td class="elipse">{{get.article}}</td>
+     
+    <tr *ngFor="let get of value" >
+      <td class="elipse"><a href="main-content/{{get.blog_id}}">{{get.title}}  <i class="fas fa-external-link-alt"></i></a></td>
+      <!-- <td class="elipse">{{get.article}}</td> -->
       <td >{{get.category}}</td>
+      <td style="cursor:pointer" ><a routerLink="../write-post/{{get.blog_id}}"><i class="fas fa-user-edit" style="color: rgb(35, 35, 35)" ></i></a></td>
+      <td style="cursor:pointer" ><i class="fas fa-trash-alt" (click)="del()" ></i></td>
+
     </tr>
   </tbody>
 </table>
+</div>

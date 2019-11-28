@@ -1,31 +1,31 @@
 <div class="container-fluid home">
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="card1">
           <h3><b>POSTS</b></h3>
           <h5 class="post"><a routerLink="posts">View</a></h5>
-          <p>Number of posts  : {{got[0]}}</p>
+          <p>Number of posts  : {{got}}</p>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3">
           <div class="card2">
             <h3><b>DRAFTS</b></h3>
-            <h5 class="draft"><a href="">View</a></h5>
+            <h5 class="draft"><a routerLink="drafts">View</a></h5>
 
-            <p>Drafted posts  : {{got[1]}}</p>
+            <p>Drafted posts  : {{draft}}</p>
 
           </div>
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-3">
             <div class="card3">
               <h3><b>PUBLISHED</b></h3>
-              <h5 class="pub"><a href="">View</a></h5>
+              <h5 class="pub"><a [routerLink]="['published']" routerLinkActive="router-link-active" >View</a></h5>
 
-              <p>Articles Published  : 5</p>
+              <p>Articles Published  : {{publish}}</p>
 
             </div>
           </div>
-          <div class="col-sm-3">
+          <div class="col-md-3">
               <div class="card4">
                 <h3><b>COMMENTS</b></h3>
                 <h5 class="com"><a href="">View</a></h5>
@@ -36,7 +36,9 @@
             </div>  
     </div>
   </div>
- <div class="container-fluid person" >
+
+
+<div class="container person " >
 <h4 class="text-center">PERSONAL INFO</h4>
 <div class="row">
   <div class="col-md-7">

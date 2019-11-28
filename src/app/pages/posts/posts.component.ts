@@ -17,9 +17,39 @@ getData;getpost:any;
   inputs=[];
   showModal = true;
   blogId: string;
-  constructor(private apicall : ApicallsService,private cookies : CookieService,private toaster:ToastrService,private routes : Router,private activedRoute:ActivatedRoute) { }
-
+  fetch=[];
+  cat: any;
+  pub: any;
+  arti: any;
+  getinfo: { 'blogId': string; 'key': string; };
+  delete: any;
+  response: any;
+  delId: any;
+  updateId: string;
+  constructor(private apicall : ApicallsService,
+  private cookies : CookieService,
+  private toaster:ToastrService,
+  private routes : Router,
+  private activedRoute:ActivatedRoute) { }
+  
+del(){
+    if (confirm("Are you sure you want to delete this Post?") == true) {
+      this.delId = this.activedRoute.snapshot.paramMap.get('id');
+      console.log(this.delId)
+      this.delete = {'delId':this.delId,'key':'delblog'};
+      this.apicall.postData(this.delete).subscribe(
+        val =>{
+          if(val['code']== "00"){
+            this.toaster.success(val['info'],'Security Center');
+            this.routes.navigate(['dashboard/posts']);
+          }else if(val['code']== "01"){
+            this.toaster.error(val['info'],'Security Center');
+          }
+        });
+    } 
+  }
   ngOnInit() {
+
     this.cookieValue = this.cookies.get('blog');
     this.getdata = {'key':'5'};
     this.apicall.postData(this.getdata).subscribe(
@@ -31,14 +61,28 @@ getData;getpost:any;
           this.toaster.error(val['info'],'Security Center')
         }
       });
-    this.getData = {'key':'4'};
+    this.getData = {'cookie':this.cookieValue,'key':'4'};
   this.apicall.postData(this.getData).subscribe(
     val =>{
       if(val['code']== "00"){
         this.value = val['info'];
+      }else if(val['code']== "01"){
+        this.toaster.error(val['info'],'Security Center')
       }
        
     });
+    // this.blogId = this.activedRoute.snapshot.paramMap.get('id');
+    //   this.getData = {'blogId':this.blogId,'key':'6'};
+    //   this.apicall.postData(this.getData).subscribe(
+    //     val =>{
+    //       if(val['code']== "00"){
+    //         this.fetch = val['info'][0].title
+    //         this.cat = val['info'][0].category
+    //         console.log(this.fetch)
+    //       }else if(val['code']== "01"){
+    //         this.toaster.error(val['info'],'Security Center');
+    //       }
+    //     });
 
   }
 
@@ -59,7 +103,7 @@ getData;getpost:any;
         if(val['code'] == '01'){
          this.toaster.error(val['info'],'Security Center');
         }else if(val['code'] == '00'){
-          this.toaster.success(val['info'],'Security Center');
+          // this.toaster.success(val['info'],'Security Center');
           this.routes.navigate(['dashboard/write-post',val['info']]);
         }
         

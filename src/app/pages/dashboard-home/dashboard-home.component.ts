@@ -11,7 +11,9 @@ export class DashboardHomeComponent implements OnInit {
   value: any;
   cookieValue: any;
   got: any;
-  getinfo: { 'get_post': any; 'key': string; };
+  getinfo: { 'get_post': any; 'key': any; };
+  draft: any;
+  publish: any;
 
   constructor(private apicall :ApicallsService,private cookies:CookieService) { }
 
@@ -23,6 +25,10 @@ export class DashboardHomeComponent implements OnInit {
       val =>{
         if(val['code']== "00"){
           this.got = val['info'];
+        } if(val['code'] == "00"){
+          this.draft = val['msg'];
+        }if(val['code']== "00"){
+          this.publish = val['response'];
         }
       });
     this.getData = {'info_of_user':this.cookieValue,
