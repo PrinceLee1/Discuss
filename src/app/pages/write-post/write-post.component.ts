@@ -87,9 +87,7 @@ this.formData.append('id',this.cookieValue);
 // console.log(this.formData);
 
 this.apicall.sendData(this.formData).subscribe(
-  (res)=>{ this.prog = false;this.toaster.success('Image uploaded successfully','Security Center')},
-  
-)
+  (res)=>{ this.prog = false;this.toaster.success('Image uploaded successfully','Security Center')},)
 
 }
   ngOnInit() {

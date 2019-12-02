@@ -14,6 +14,11 @@ public name;country;state;address;phone;website;company:any;
   cookieValue: string;
   acctInfo: { 'acctinfo': string; 'key': string; };
   value: any;
+  fileToUpload: File;
+  imageUrl: any;
+  formData: FormData;
+  userImage: string | Blob;
+  prog;photo = false;
 
 
   constructor(
@@ -32,7 +37,7 @@ this.acctinput = {
   this.apicall.postData(this.acctinput).subscribe(
     res =>{
       if(res['code'] == '01'){
-       this.toaster.error(res['info'],'Security Center');
+       this.toaster.error(res['info'],'Security Center');       
       }else if(res['code'] == '00'){
         this.toaster.success(res['info'],'Security Center');
         this.routes.navigateByUrl('/',{skipLocationChange:true}).then(()=>
@@ -43,9 +48,38 @@ this.acctinput = {
       
     });
 }
+
+
+uploadPic(file:FileList){  
+ 
+  this.fileToUpload = file.item(0);
+  var imgReader = new FileReader();
+  imgReader.onload =(event:any) =>{
+    this.imageUrl = event.target.result;
+  }
+  imgReader.readAsDataURL(this.fileToUpload);
+  this.photo = false
+  }
+  addImage(){
+     this.photo = true;
+    this.cookieValue = this.cookies.get('blog');
+    this.prog = true;
+  this.formData = new FormData();
+  this.formData.append("image",this.fileToUpload,this.fileToUpload.name),
+  this.formData.append("key","acctpic");
+  this.formData.append('id',this.cookieValue);
+  console.log(this.formData);
+  
+  this.apicall.sendData(this.formData).subscribe(
+    (res)=>{ this.prog = false;this.toaster.success('Profile image uploaded successfully','Security Center');
+    this.routes.navigateByUrl('/',{skipLocationChange:true}).then(()=>
+    this.routes.navigate(['/dashboard/profile']))}
+    )
+  
+  }
+
   ngOnInit() {
     this.cookieValue = this.cookies.get('blog');
-    console.log(this.cookieValue)
 this.acctInfo = {'acctinfo':this.cookieValue,'key':'19'}
     this.apicall.postData(this.acctInfo).subscribe(
       mes =>{

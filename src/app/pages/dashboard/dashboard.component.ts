@@ -16,6 +16,8 @@ export class DashboardComponent implements OnInit {
 load= false;
   hide: boolean;
   gt: string;
+  acctInfo: { 'acctinfo': any; 'key': string; };
+  welcome: any;
   constructor(private toaster :ToastrService,
     private apicall :ApicallsService,
     private cookies:CookieService,
@@ -32,7 +34,7 @@ move(){
 logOut(){
 this.gt = this.cookies.get('blog');
 if(this.gt){
-  this.cookies.deleteAll();
+  this.cookies.delete('blog');
   this.routes.navigate(['/login']);
 }
  
@@ -55,6 +57,17 @@ if(this.gt){
       this.toaster.error('Please Login to Continue!','Security Center')
 
     }
+    this.cookieValue = this.cookies.get('blog');
+    this.acctInfo = {'acctinfo':this.cookieValue,'key':'19'}
+        this.apicall.postData(this.acctInfo).subscribe(
+          mes =>{
+            if(mes['code'] == '01'){
+             this.toaster.error(mes['info'],'Security Center');
+            }else if(mes['code'] == '00'){
+              this.welcome = mes['info'];
+            }
+            
+          });
   }
 
 }

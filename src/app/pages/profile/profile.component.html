@@ -3,18 +3,18 @@
     <h5><b>User Profile</b></h5><hr>
     <div class="row">
       <div class="col-lg-4 col-sm-6">
-        <img src="../../../assets/undraw_male_avatar_323b.svg" width="250px" class="img-responsive">
-        <h4 class="text-center">{{value}}</h4>
-        <i class="fas fa-globe"></i>  <span style="margin-left: 8px">         Almadore Street,Lisbon USA.</span><br>
-        <i class="fas fa-link"></i><a href="https://princelee.netlify.com" style="margin-left: 8px">  www.princelee.netlify.com</a><br>
-        <i class="fas fa-briefcase"></i> <span style="margin-left: 8px">   Entrepreneur/Software Engineer</span><br>
+        <img [src]="value[7]" width="200px" class="img-responsive profile-img">
+        <h4 class="text-center">{{value[0]}}</h4>
+        <i class="fas fa-globe"></i>  <span style="margin-left: 8px"> {{value[1]}}</span><br>
+        <i class="fas fa-link"></i><a [href]="value[2]" style="margin-left: 8px">{{value[2]}}</a><br>
+        <i class="fas fa-briefcase"></i> <span style="margin-left: 8px">{{value[3]}}</span><br>
     </div>
     <div class="col-lg-8 col-sm-6">
         <h2>Account Information </h2><hr>
         <form>
           <div class="form-group">
             <p>Full Name*</p>
-            <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Name">
+            <input type="text" class="form-control" [(ngModel)]="name" name="name"  [value]="value[0]" placeholder="Name">
           </div>
           <div class="form-group">
             <p>Country*</p>
@@ -269,7 +269,6 @@
           <div class="form-group">
               <p>State*</p>
               <select class="form-control" [(ngModel)]="state" name="state">
-                <option selected disabled value="Select">Select</option>
                 <option value="Algeria">Algeria</option>
                 <option value="Algeria">Algeria</option>
                 <option value="Algeria">Algeria</option>
@@ -347,7 +346,7 @@
             </div>
             <div class="form-group">
                 <p>Address/Street*</p>
-                <input type="text" class="form-control" [(ngModel)]="address" name="address" placeholder="Address/Street">
+                <input type="text" class="form-control" [(ngModel)]="address" name="address"  placeholder="Address/Street">
               </div>
               <div class="form-group">
                   <p>Phone*</p>
@@ -355,12 +354,23 @@
                 </div>
                 <div class="form-group">
                   <p>Website</p>
-                  <input type="text" class="form-control" [(ngModel)]="website" name="website" placeholder="Website">
+                  <input type="text" class="form-control" [(ngModel)]="website" name="website"   placeholder="Website">
                 </div>
                 <div class="form-group">
                     <p>Company Name</p>
-                    <input type="text" class="form-control"[(ngModel)]="company" name="company" placeholder="Company Name">
+                    <input type="text" class="form-control"[(ngModel)]="company" name="company"  placeholder="Company Name">
                   </div>
+                  <div class="form-group">
+                      <p>Upload Picture</p>
+                      <input type="file"(change)="uploadPic($event.target.files)" >
+                      <div class="img-div">
+                          <img [src]="imageUrl" alt="" width="200px" height="130px" *ngIf="photo">
+                          <!-- <mat-spinner *ngIf="prog"></mat-spinner> -->
+                          <mat-progress-bar mode="indeterminate" color="warn"  *ngIf="prog" ></mat-progress-bar> 
+                        
+                        </div>
+                        <button type="button" (click)="addImage()" class="addimage" >Add Image</button>
+                    </div>
                   <button (click)="accountInfo()" class="btn btn-warning" >Save</button>
 
         </form>

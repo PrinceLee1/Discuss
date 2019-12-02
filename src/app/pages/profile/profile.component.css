@@ -2,6 +2,11 @@ h5,h4{
     margin-left: 20px;
     margin-top: 30px
 }
+.profile-img{
+    border: 2px solid rgb(82, 32, 82);
+    border-radius: 20px;
+    margin-left: 50px
+}
 button{
     margin-top: 12px;
     width: 94%;

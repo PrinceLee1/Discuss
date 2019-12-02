@@ -27,6 +27,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { DraftsComponent } from './pages/drafts/drafts.component';
 import { PublishedComponent } from './pages/published/published.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PublishedComponent } from './pages/published/published.component';
     ProfileComponent,
     ArticlesComponent,
     DraftsComponent,
-    PublishedComponent
+    PublishedComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

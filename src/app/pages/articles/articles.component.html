@@ -17,9 +17,11 @@
 </span><hr>
 </div>
 </nav> 
+<h1 class="text-center" *ngIf="article">No Article in this Category!</h1>
+
 <div class="container-fluid blogPart">
   <div class="row">
-    <div class="col-md-5 col-sm-5" *ngFor="let get of value">
+    <div class="col-md-12 col-sm-12" *ngFor="let get of value">
       <div routerLink="/main-content/{{get.blog_id}}">
        <span> <img  [src]="get.image" width="100px"></span>
           <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
@@ -28,23 +30,7 @@
       </div>
       
     </div>
-    <div class="col-md-2 col-sm-2" *ngFor="let get of value">
-        <div routerLink="/main-content/{{get.blog_id}}">
-         <span> <img  [src]="get.image" width="100px"></span>
-            <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
-            <p (click)="hov()">by : {{get.author}}</p>
-            <small>an hour ago</small> . <span>20 min read</span>
-        </div>
-        
-      </div>
-      <div class="col-md-5 col-sm-5" *ngFor="let get of value">
-        <div routerLink="/main-content/{{get.blog_id}}">
-         <span> <img  [src]="get.image" width="100px"></span>
-            <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
-            <p (click)="hov()">by : {{get.author}}</p>
-            <small>an hour ago</small> . <span>20 min read</span>
-        </div>
-        
-      </div>
+  
+    
 </div>
 </div>

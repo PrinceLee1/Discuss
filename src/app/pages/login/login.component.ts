@@ -17,7 +17,10 @@ export class LoginComponent implements OnInit {
   //   }
 public email;password;dat: any;
 public formInputs : any;
-  constructor(private apicall :ApicallsService, private routes:Router,private toaster :ToastrService,private cookies : CookieService) { }
+  constructor(private apicall :ApicallsService, 
+    private routes:Router,
+    private toaster :ToastrService,
+    private cookies : CookieService) { }
   onSubmit(){
 this.formInputs = {'email' : this.email,'password' : this.password,'key': '2'};
 this.apicall.postData(this.formInputs).subscribe(

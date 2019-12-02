@@ -16,40 +16,43 @@ export class ArticlesComponent implements OnInit {
      private localStorage: LocalStorage,
      private routes :Router) { }
 
+     article :Boolean = false;
      go(x){
-      // alert(x);
-      let xLocal = {
+            let xLocal = {
         idOne : x
       }
       this.localStorage.setItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h',xLocal).subscribe(
         (res)=>{
           if(res == true){
-            this.routes.navigateByUrl('/',{skipLocationChange:true}).then(()=>
-            this.routes.navigate(['/articles'])
+            // this.routes.navigateByUrl('/',{skipLocationChange:true}).then(()=>
+            // this.routes.navigate(['/articles'])
             
-            );
+            // );
+          this.localStorage.getItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h').subscribe(  
+              (met)=>{
+                  // console.log(res['idOne']);
+                  let categoryApi = {
+                    category:met['idOne'],
+                    'key': '13'
+                  }
+                  this.apicall.postData(categoryApi).subscribe(
+                    val =>{
+                      if(val['code']== "00"){
+                        this.value = val['info'];
+                        this.routes.navigate(['/articles']);
+                        this.localStorage.removeItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h');
+                      } else if(val['code']== "01"){
+                        this.toaster.error(val['info'],'Security Center')
+                      }
+                    });
+                  });
           }
+
+
         }
       );
-      //   this.localStorage.getItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h').subscribe(  
-      // (res)=>{
-      //     // console.log(res['idOne']);
-      //     let categoryApi = {
-      //       category:res['idOne'],
-      //       'key': '13'
-      //     }
-      //     this.apicall.postData(categoryApi).subscribe(
-      //       val =>{
-      //         if(val['code']== "00"){
-      //           this.value = val['info'];
-      //           this.routes.navigate(['']);
-      //           this.localStorage.removeItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h');
-      //         }else if(val['code']== "01"){
-      //           this.toaster.error(val['info'],'Security Center')
-      //         }
-      //       });
-      //     }
         }
+   
 
   ngOnInit() {
     this.getData = {'key':'allpost'};
