@@ -28,8 +28,7 @@ export class DraftsComponent implements OnInit {
       res=>{
         if(res['code']== "00"){
           this.value = res['info'];
-          console.log(this.value);
-        }else{
+        }else if(res['code'] == "01"){
           this.toaster.error(res['info'],'Security Center')
         }
       });

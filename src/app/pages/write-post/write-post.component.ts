@@ -3,7 +3,7 @@ import { ApicallsService } from 'src/app/services/apicall.service';
 import { Router,ActivatedRoute} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 // import { NgProgress } from 'ngx-progressbar';
-import { Observable } from 'rxjs';
+import { Observable, empty } from 'rxjs';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NgForm } from '@angular/forms';
@@ -28,7 +28,7 @@ public article;title;category;publish_type;formInputs:any;
   cat: any;
 
 
-prog = false;
+prog;photo = false;
 
   constructor(private apicall : ApicallsService,
     private routes : Router,
@@ -78,16 +78,23 @@ imgReader.readAsDataURL(this.fileToUpload)
 // this.prog = false;
 }
 addImage(){
-  this.prog = true;
 this.formData = new FormData();
 this.formData.append("image",this.fileToUpload,this.fileToUpload.name),
 this.formData.append("blog_id",this.blog_id),
 this.formData.append("key","11");
 this.formData.append('id',this.cookieValue);
+if(this.formData.append("image",this.fileToUpload,this.fileToUpload.name) !==null ){
+    this.prog = true;
+  this.photo = true;
+  this.apicall.sendData(this.formData).subscribe(
+  (res)=>{ this.prog = false;this.toaster.success('Image uploaded successfully','Security Center')},)
+this.photo = false
+}else{
+  this.toaster.error('Please an Image is needed','Security Center')
+
+}
 // console.log(this.formData);
 
-this.apicall.sendData(this.formData).subscribe(
-  (res)=>{ this.prog = false;this.toaster.success('Image uploaded successfully','Security Center')},)
 
 }
   ngOnInit() {

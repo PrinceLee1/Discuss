@@ -15,18 +15,23 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { DraftsComponent } from './pages/drafts/drafts.component';
 import { PublishedComponent } from './pages/published/published.component';
+import {ResetPasswordComponent} from './pages/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
+//   {path : '',
+//   redirectTo :'home',
+//   pathMatch :'full'
+// },
   {path : '', component:AppNavComponent,children:[
     {path : '',component:LandingPageComponent},
-    {path : 'home',component:LandingPageComponent},
     {path : 'signup', component:SignupComponent},
     {path : 'forgot-password', component:ForgotPasswordComponent},
+    {path :'reset-password/:id', component:ResetPasswordComponent},
   {path : 'login', component:LoginComponent},
-  {path : 'main-content/:id',component:MainContentComponent}
-  ]},
   {path : 'articles', component:ArticlesComponent},
+  {path : 'main-content/:title/:id',component:MainContentComponent},
+  ]},
   {path : 'dashboard', component:DashboardComponent,children:[
     {path : '', component:DashboardHomeComponent},
     {path : 'write-post/:id', component:WritePostComponent},
@@ -41,7 +46,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

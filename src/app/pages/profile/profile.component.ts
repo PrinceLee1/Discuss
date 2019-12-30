@@ -9,8 +9,8 @@ import { Router,ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-public name;country;state;address;phone;website;company:any;
-  acctinput: { 'name': any; 'country': any; 'state': any; 'address': any; 'phone': any; 'website': any; 'company': any; 'user': any;'key': string; };
+public name;country;state;address;phone;facebook;twitter;gmail:any;
+  acctinput: { 'name': any; 'country': any; 'state': any; 'address': any; 'phone': any; 'facebook': any; 'twitter': any;'gmail':any; 'user': any;'key': string; };
   cookieValue: string;
   acctInfo: { 'acctinfo': string; 'key': string; };
   value: any;
@@ -19,7 +19,7 @@ public name;country;state;address;phone;website;company:any;
   formData: FormData;
   userImage: string | Blob;
   prog;photo = false;
-
+prof = true;
 
   constructor(
     private apicall : ApicallsService,
@@ -32,7 +32,7 @@ public name;country;state;address;phone;website;company:any;
   accountInfo(){
     this.cookieValue = this.cookies.get('blog');
 this.acctinput = {
-  'name':this.name,'country':this.country,'state':this.state,'address':this.address,'phone':this.phone,'website':this.website,'company':this.company,'user':this.cookieValue,'key':'account'};
+  'name':this.name,'country':this.country,'state':this.state,'address':this.address,'phone':this.phone,'facebook':this.facebook,'twitter':this.twitter,'gmail': this.gmail,'user':this.cookieValue,'key':'account'};
     
   this.apicall.postData(this.acctinput).subscribe(
     res =>{
@@ -87,6 +87,10 @@ this.acctInfo = {'acctinfo':this.cookieValue,'key':'19'}
          this.toaster.error(mes['info'],'Security Center');
         }else if(mes['code'] == '00'){
           this.value = mes['info'];
+        }else if(this.value == null){
+          this.prof = false;
+        }else if(this.value){
+          this.prof = true
         }
         
       });

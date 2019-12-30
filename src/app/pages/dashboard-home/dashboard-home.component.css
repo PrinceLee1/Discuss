@@ -1,6 +1,5 @@
 .home{
-    margin-top: 60px;
-    /* margin-left: 50px   */
+    margin-top: 60px; 
 }
 .card1{
     /* margin-left: 195px; */
@@ -34,41 +33,46 @@ h3{
     transform: translateY(100%)
 }
 
-h5[class="post"]{
-    background: rgb(30, 33, 226);
-    border-radius: 15px;
-    width: 150px;
-    margin-top: 60px;
+button[class="post"]{
+    margin-top: 40px;
+   border: 0px;
    height: 35px;
-   padding-top: 2px;
-    margin-left: 50px  
+   margin-left: 20px;
+   width:75% !important;
+   background-color: rgb(30, 33, 226);
+   border-radius: 15px;
 }
-h5[class="draft"]{
+button a{
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none
+}
+button[class="draft"]{
     background: rgb(206, 132, 14);
+    margin-top: 40px;
+    border: 0px;
+    height: 35px;
+    margin-left: 20px;
+    width:75% !important;
     border-radius: 15px;
-    width: 150px;
-    margin-top: 60px;
-   height: 35px;
-   padding-top: 2px;
-    margin-left: 50px  
 }
-h5[class="pub"]{
+button[class="pub"]{
     background: rgb(16, 151, 39);
-    border-radius: 15px;
-    width: 150px;
-    margin-top: 60px;
-   height: 35px;
-   padding-top: 2px;
-    margin-left: 50px  
+    margin-top: 40px;
+    border: 0px;
+    height: 35px;
+    margin-left: 20px;
+    width:75% !important;
+    border-radius: 15px; 
 }
-h5[class="com"]{
+button[class="com"]{
     background: orangered;
-    border-radius: 15px;
-    width: 150px;
-    margin-top: 60px;
+    margin-top: 40px;
+   border: 0px;
    height: 35px;
-   padding-top: 2px;
-    margin-left: 50px  
+   margin-left: 20px;
+   width:75% !important;
+   border-radius: 15px;
 }
 h5 a{
     color: #fff;    
@@ -94,6 +98,10 @@ p{
 .person li{
     /* margin-left: 200px; */
     color:rgb(104, 21, 49);
+}
+.share a{
+    text-decoration: none;
+    color: #fff
 }
 .share h5{
     color:rgb(104, 21, 49);
@@ -128,4 +136,37 @@ p{
     font-size: 16px;
     border-radius: 10px;
     margin-top: 18px;
+}
+
+
+/*** MEDIA QUERIES***/
+@media screen and (max-width:375px){
+    .home h5{
+        width: 100px;
+        margin-left: 70px
+    }
+    .home p{
+        font-size: 16px
+    }
+    h5 a{
+        color: #fff;    
+        margin-left: 20px;
+    }
+}
+@media screen and (max-width:768px){
+    .home h3{
+        font-size: 16px
+    }
+    .home h5{
+        width: 68px;
+        margin-left: 16px
+    }
+    h5 a{
+        color: #fff;    
+        margin-left: 18px;
+        font-size: 15px
+    }
+    .home p{
+        font-size: 16px
+    }
 }

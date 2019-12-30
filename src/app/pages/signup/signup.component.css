@@ -1,4 +1,40 @@
-.card{
+.container{
+    margin-top: 70px
+}
+.shadow{
+    height: 350px;
+}
+input{
+    margin-top: 15px
+}
+p{
+    font-size:25px;
+    margin-top: 3%
+}
+
+h2{
+    margin-top: 12px;
+    font-style: italic;  
+    font-size: 50px 
+}.dont{ margin-left: 90px}
+.forgot{
+    margin-left: 100px
+}
+a{
+    text-decoration-color: gray;
+    color: rgb(85, 32, 82)}
+button{
+    width: 100%;
+    background:rgb(85, 32, 82);
+    color: aliceblue;
+}
+button:hover{
+    color: aliceblue;   
+} 
+small{
+    margin-top: 20px
+}
+/* .card{
     height: 480px;
     width: 950px;
     margin-left: 200px;
@@ -25,7 +61,6 @@ p{
 }
 small{
     margin-left: 400px;
-    /* transform: translateY(-260px) */
 }
 a{
     text-decoration-color: gray;
@@ -59,9 +94,9 @@ input[type="password"] {
     width: 300px;
    margin: 0px 10px 0px 350px;
 
-}
+} */
 /**********MEDIA QUERIES ***********/
-@media screen and (max-width:375px){
+/* @media screen and (max-width:375px){
     h2{
         font-size: 28px
     }p{font-size: 18px}
@@ -83,4 +118,4 @@ transform: translateX(-536px)
         font-size: 15px;
         text-transform: capitalize
     }
-}
+} */

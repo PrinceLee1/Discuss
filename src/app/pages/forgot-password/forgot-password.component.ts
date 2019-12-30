@@ -13,8 +13,18 @@ public email;forgotPass:any;
     private routes:Router,
     private toaster :ToastrService,) { }
 forgot(){
-  alert(this.forgotPass)
 this.forgotPass = {'email':this.email,'key':'forgot'}
+ 
+this.apicall.postData(this.forgotPass).subscribe(
+  (val) =>{
+    if(val['code'] == '01'){
+     this.toaster.error(val['info'],'Security Center');
+    }else if(val['code'] == '00'){
+      this.toaster.success(val['info'],'Security Center');
+
+    }
+    
+  });
 }
   ngOnInit() {
   }

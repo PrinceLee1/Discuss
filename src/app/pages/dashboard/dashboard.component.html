@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="sidenav">
     <h3><a href="#"><img src="../../../assets/logo.png" width="70px" style="margin-top: 20px;margin-left:60px"></a></h3>
-    <span style="margin-left: 35px;color:whitesmoke;margin-top:18px">Hi, {{value}}</span><span><img [src]="welcome[7]"  width="35px" style="margin-left: 40px;margin-top: 12px;border-radius: 280px;border: 2px solid rgb(176, 177, 174)"></span>
+    <span style="margin-left: 35px;color:whitesmoke;margin-top:18px">Hi, {{value}}</span><span><img [src]="welcome[8]"  width="35px" style="margin-left: 60px;margin-top: 12px;border-radius: 280px;border: 2px solid rgb(176, 177, 174)"></span>
     <!-- <img src="../../../assets/oo.png" width="70px" style="margin-left: 45px;margin-top: 20px;border-radius: 150px;border: 2px solid yellowgreen"> -->
     <ul>
         <li>HOME</li>
@@ -9,13 +9,13 @@
       <li>USERS</li>
 
       <li><a routerLink="profile">Profile</a><i class="fas fa-user-circle" style="margin-left: 80px" [routerLink]="['profile']" routerLinkActive="router-link-active" ></i></li>
-      <li><a routerLink="/notifications">Notifications</a><i class="fas fa-bell" style="margin-left: 40px"></i><sup><b>15</b></sup></li>
+      <!-- <li><a routerLink="/notifications">Notifications</a><i class="fas fa-bell" style="margin-left: 40px"></i><sup><b>15</b></sup></li> -->
       <li><a routerLink="posts">Write Article</a><i class="fas fa-user-edit" style="margin-left: 40px" [routerLink]="['posts']" ></i></li>
       <li><a routerLink="published">Published</a><i class="fas fa-upload" style="margin-left: 60px" [routerLink]="['published']" routerLinkActive="router-link-active" ></i></li>
       <li><a routerLink="drafts">Drafts</a><i class="fas fa-copy" style="margin-left: 82px" [routerLink]="['drafts']" routerLinkActive="router-link-active" ></i></li>
-      <li><a routerLink="posts">Comments</a><i class="fas fa-comment-dots" style="margin-left: 55px"></i><sup><b>300</b></sup></li>
+      <!-- <li><a routerLink="posts">Comments</a><i class="fas fa-comment-dots" style="margin-left: 55px"></i><sup><b>300</b></sup></li> -->
       <li>ACCOUNT</li>
-      <li><a routerLink="settings">Settings</a><i class="fas fa-user-cog" style="margin-left: 70px"></i></li>
+      <!-- <li><a routerLink="settings">Settings</a><i class="fas fa-user-cog" style="margin-left: 70px"></i></li> -->
       <li><a (click)="logOut()" style="cursor: pointer;">Log Out</a><i class="fas fa-sign-out-alt" style="margin-left: 72px;cursor: pointer;" [routerLink]="['/login']" routerLinkActive="router-link-active"></i></li>
 
     </ul>
@@ -23,7 +23,7 @@
 
     <div class="container-fluid main-content">
         <mat-progress-bar mode="indeterminate" [(value)]="progress" *ngIf="load" ></mat-progress-bar> 
-               <nav class="navbar fixed-top our-nav"> 
+               <nav class="navbar fixed-top our-nav shadow"> 
               <i class="fas fa-exchange-alt" (click)="move()" style="cursor:pointer;font-size: 22px;color: rgb(60, 15, 68)"></i>
         </nav>   
       

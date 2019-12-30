@@ -26,6 +26,8 @@ getData;getpost:any;
   response: any;
   delId: any;
   updateId: string;
+  acctInfo: { 'acctinfo': string; 'key': string; };
+  check: any;
   constructor(private apicall : ApicallsService,
   private cookies : CookieService,
   private toaster:ToastrService,
@@ -34,7 +36,7 @@ getData;getpost:any;
   
 del(){
     if (confirm("Are you sure you want to delete this Post?") == true) {
-      this.delId = this.activedRoute.snapshot.paramMap.get('id');
+      this.delId = this.cookies.get('blog');
       console.log(this.delId)
       this.delete = {'delId':this.delId,'key':'delblog'};
       this.apicall.postData(this.delete).subscribe(
@@ -85,12 +87,24 @@ del(){
     //     });
 
   }
+checkUser(){
+  this.cookieValue = this.cookies.get('blog');
+  this.acctInfo = {'acctinfo':this.cookieValue,'key':'19'}
+      this.apicall.postData(this.acctInfo).subscribe(
+        mes =>{
+        if(mes['code'] == '00'){
+            this.check = mes['info'];
+          }else if(this.check == null){
+            this.routes.navigate(['/dashboard/profile']);
+            this.toaster.error('Please Update your Profile!.','Security Center');
+
+          }
+        });
+ 
+}
 
   submitPost(x:NgForm){
-    this.blogId = this.activedRoute.snapshot.paramMap.get('id');console.log(this.blogId);
-
-    console.log(x.value);
-  
+    this.blogId = this.activedRoute.snapshot.paramMap.get('id');
     let blog ={
       title : x.value.title,
       category : x.value.category,

@@ -10,7 +10,6 @@ h5,h4{
 button{
     margin-top: 12px;
     width: 94%;
-
 }
 i{
     margin-left: 20px;
@@ -18,7 +17,4 @@ i{
 }
 input,select{
     max-width: 650px
-}
-.profile{
-    background:linear-gradient(rgba(0,0,0,0.4)rgba(0,0,0,0.9)),url(../../../assets/bg-hero-desktop.svg)
 }

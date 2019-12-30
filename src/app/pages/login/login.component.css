@@ -1,81 +1,38 @@
-
-.card{
-    height: 480px;
-    width: 950px;
-    margin-left: 100px;
-    margin-top: 30px;
-    box-shadow: 0px 4px 6px 2px gray;
-    /* box-sizing: border-box */
+.container{
+    margin-top: 70px
 }
-img{
-    margin-left: 150px;
-    margin-top: 20px
+.shadow{
+    height: 350px;
+}
+input{
+    margin-top: 15px;
 }
 p{
     font-size:25px;
     margin-top: 3%
 }
-form{
-    margin-left: 200px;
-  transform: translateY(-120%)
-}
+
 h2{
-    margin-top: 2%;
+    margin-top: 12px;
     font-style: italic;  
     font-size: 50px 
+}.dont{ margin-left: 90px}
+.forgot{
+    margin-left: 100px
 }
-small[class="text-center"]{
-    margin-left: 600px;
-    transform: translateY(-260px)
-}
-/* .forgot{
-    margin-left: 550px;
-    transform: translateY(-279px)
-} */
 a{
-    text-decoration-color: gray;
+    text-decoration-color: rgb(206, 132, 14);
     color: rgb(85, 32, 82)}
 button{
-    margin: 0px 10px 0px 350px;
-    width: 300px;
+    width: 100%;
     background:rgb(85, 32, 82);
-    color: aliceblue;
+    color: white;
 }
-button:hover{
-    color: aliceblue;   
-}
-input[type="text"] {
-    width: 300px;
-    margin: 80px 10px 0px 350px;
-
-}
-input[type="password"] {
-    width: 300px;
-   margin: 0px 10px 0px 350px;
-
+button,input:hover{
+    border: 2px solid rgb(206, 132, 14);
+} 
+small{
+    margin-top: 20px
 }
 
-/**********MEDIA QUERIES ***********/
-@media screen and (max-width:375px){
-    h2{
-        font-size: 28px
-    }p{font-size: 18px}
-    .card{
-        margin-left: 5px;
-        max-width: 330px;
-        height:730px;
-    }
-    img{
-        margin-left: 33px;
-        width: 250px
-    }
-    form{
-transform: translateX(-536px)
-    }
-    small{
-        transform: translateX(-338px);
-        display: grid;
-        font-size: 15px;
-        text-transform: capitalize
-    }
-}
+

@@ -1,33 +1,43 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-9 main col-md-6" *ngFor="let get of value" >
+    <div class="col-lg-9 main col-12" *ngFor="let get of value" >
       <h2>{{get.title}}</h2>
-      <p>Written by :<span style="color:rgb(85, 32, 82) "> {{get.author}}</span></p>
+     <span><img [src]="get.profile_picture"  width="45px" style="margin-top: 2px;border-radius: 280px;border: 2px solid rgb(85, 32, 82)"> </span> <span>  Written by :<span style="color:rgb(85, 32, 82) "> {{get.author}}</span></span><br><span>Category : <mark>{{get.category}}</mark></span>
       <p>Posted on :  {{get.uploadTime}}</p>
-     <a [href]="get.image"><img [src]="get.image" width="100%" height="310px" class="shadow"></a> 
-      <div [innerHtml]="get.article" class="arti"></div>
+     <img [src]="get.image" width="100%" height="310px" class="shadow">
+      <div [innerHtml]="get.article" class="arti"></div><hr>
+      <!-- <h3>Like this Article:   <i class="fa fa-heart" (click)="like()"></i>  <i class="fa fa-heart"></i>  <i class="fa fa-heart"></i>
+      </h3> -->
+ 
+      <div class="row">
+        <div class="col-md-8 col-12">
+      <h4><b>Author</b></h4>
+      <span class="auth-img"> <img [src]="get.profile_picture" width="200px" height="180px"></span><span class="author"> <b>{{get.author}}</b></span>
+      <p>Metus lobortis tortor tincidunt himenaeos habitant quis <br>dictumst proin odio sagittis purus mi, nec taciti himenaeos habitant quis in sit varius.</p>
+      </div>
+      <div class="col-md-4 col-12">
+      <footer>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-facebook-f"></i>
+      </footer>
+      </div>
+      </div>
     </div>
-    <div class="col-lg-3 col-md-6 recent shadow ">
+    <div class="col-lg-3 col-12 recent">
       <h4>Recent Posts</h4><hr>
       <div class="container">
         <div class="row"  *ngFor="let recent of vale">
-          <div class="col-sm-6">
+          <div class="col-md-6 col-sm-7">
             <img [src]="recent.image" width="110px" style="margin-top: 8px" >
           </div>
-          <div class="col-sm-6">
-            <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+          <div class="col-md-6 col-sm-5">
+            <a routerLink="main-content/{{recent.title}}/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
         </div>
         </div>
-      </div>
-      <div class="container cats" *ngFor="let recent of vale">
-        <h4>Categories</h4><hr>
-        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
-        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
-        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
-        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
-        <a href="main-content/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
-
       </div>
   </div>
 </div>

@@ -27,9 +27,8 @@ export class PublishedComponent implements OnInit {
       res=>{
         if(res['code']== "00"){
           this.value = res['msg'];
-          console.log(this.value);
-        }else{
-          this.toaster.error(res['info'],'Security Center')
+        }else if(res['code']== "01"){
+          this.toaster.error(res['msg'],'Security Center');
         }
       });
   }

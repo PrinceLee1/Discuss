@@ -1,22 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { ApicallsService } from 'src/app/services/apicall.service';
 import { LocalStorage } from '@ngx-pwa/local-storage';
-
+import { CookieService } from 'ngx-cookie-service';
 import { Router} from '@angular/router';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { slideInRight,slideInLeft,fadeIn} from 'ng-animate';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.css']
+  styleUrls: ['./articles.component.css'],
+  animations: [
+    trigger('slideInRight', [transition('* => *', useAnimation(slideInRight, {
+      // Set the duration to 5seconds and delay to 0second
+      params: { timing: 1, delay: 0 }
+    }))]),
+    trigger('fadeIn', [transition('* => *', useAnimation(fadeIn, {
+      // Set the duration to 5seconds and delay to 0second
+      params: { timing: 1, delay: 0 }
+    }))]),
+    trigger('slideInLeft', [transition('* => *', useAnimation(slideInLeft, {
+    }))])
+
+  ],
 })
 export class ArticlesComponent implements OnInit {
-  public getData;value:any;
+  public getData;value;slideInLeft;slideInRight:any;
+  cookieValue: any;
+  getdata: { 'key': string; };
+  inputs: any;
+  
   constructor(private apicall :ApicallsService,
      private toaster :ToastrService,
+     private cookies : CookieService,
      private localStorage: LocalStorage,
      private routes :Router) { }
 
-     article :Boolean = false;
+     article = false;
      go(x){
             let xLocal = {
         idOne : x
@@ -24,10 +44,6 @@ export class ArticlesComponent implements OnInit {
       this.localStorage.setItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h',xLocal).subscribe(
         (res)=>{
           if(res == true){
-            // this.routes.navigateByUrl('/',{skipLocationChange:true}).then(()=>
-            // this.routes.navigate(['/articles'])
-            
-            // );
           this.localStorage.getItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h').subscribe(  
               (met)=>{
                   // console.log(res['idOne']);
@@ -41,8 +57,9 @@ export class ArticlesComponent implements OnInit {
                         this.value = val['info'];
                         this.routes.navigate(['/articles']);
                         this.localStorage.removeItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h');
-                      } else if(val['code']== "01"){
-                        this.toaster.error(val['info'],'Security Center')
+                        // this.article = true;
+                      } else if(this.value == 0 ){
+                        this.article = true;
                       }
                     });
                   });
@@ -53,7 +70,16 @@ export class ArticlesComponent implements OnInit {
       );
         }
    
+write(){
+  this.cookieValue = this.cookies.get('blog');
+if(this.cookieValue){
+  this.routes.navigate(['dashboard/posts']);
 
+}else{
+  this.toaster.error('Please you need to Login to Write an Article!','Security Center');
+
+}
+}
   ngOnInit() {
     this.getData = {'key':'allpost'};
     console.log(this.getData)
@@ -66,7 +92,16 @@ export class ArticlesComponent implements OnInit {
         }
       
       });
-
+    
+      this.getdata = {'key':'5'};
+      this.apicall.postData(this.getdata).subscribe(
+        val =>{
+          if(val['code']== "00"){
+            this.inputs = val['info'];
+          }else if(val['code']== "01"){
+            this.toaster.error(val['info'],'Security Center')
+          }
+        });
   }
 
 }

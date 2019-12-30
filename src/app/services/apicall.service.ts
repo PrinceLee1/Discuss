@@ -8,7 +8,7 @@ import "rxjs"
 })
 export class ApicallsService {
    
-  private ap:string = 'http://localhost/blogfolder/blogapi.php';
+  private ap:string = 'https://di-scuss.000webhostapp.com/blogfolder/blogapi.php';
 
   constructor(private http:HttpClient) {
    }

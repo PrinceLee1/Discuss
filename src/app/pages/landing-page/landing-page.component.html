@@ -16,55 +16,88 @@
   </div>
 </div> --> 
 
-<header class="blog-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-<h3 class="text-center">Join the Fast Growing <br>Community to tell your Stories.</h3>
-<!-- <button type="button"><a href="signup">Get Started</a></button> -->
-      </div>
+<div class="container">
+  <div class="row header">
+    <div class="col-lg-6 col-12"  [@bounce]="bounce">
+      <h2>Welcome to Discuss,<br>tell inspiring Stories. </h2>
+      <p>Discuss is the easiest way to connect with <br>the best authors and people who do what you <br>do from around the world and grow your career!</p>
+      <a routerLink="/signup"><button type="button" class="get-started" >Get Started</button></a>
+
+    </div>
+    <div class="col-lg-6 col-12" [@fadeIn]="fadeIn">
+      <img src="../../../assets/undraw_hang_out_h9ud (1).svg" width="100%">
     </div>
   </div>
-</header>
+</div>
 <div class="container-fluid test">
   <div class="row">
-    <div class=" col-lg-7 col-sm-6">
-      <img src="../../../assets/dc-img.svg" width="700px" style="margin-top: 50px">
+    <div class=" col-lg-7 col-12"  [@fadeIn]="fadeIn" >
+      <img src="../../../assets/dc-img.svg" width="100%" style="margin-top: 50px">
     </div>
-    <div class="col-lg-5 col-sm-6" style="margin-top: 70px">
+    <div class="col-lg-5 col-12" style="margin-top: 70px" [@bounce]="bounce">
       <h3>Do You Know What Happens<br> on Discuss?</h3>
       <ul>
-        <li><span></span>      World-class publications. </li>
+        <li><span></span>      Publications that Inspires. </li>
         <li><span></span>      Undiscovered voices. </li>
-        <li><span></span>        Topics You Love. </li>
-        <li><span></span>      Expand Your Mind. </li>
-        <li><span></span>      World-class publications. </li>
+        <li><span></span>      Topics You Love. </li>
+        <li><span></span>      People that think out of the Box. </li>
+        <li><span></span>      Outstanding Ideas. </li>
         <li><span></span>      World-class publications. </li>
       </ul>
     </div>
   </div>
-  <h4 class="text-center">Choose what interests you. We will help you get Connected</h4>
-  <a href="signup"><button type="button" class="get-started" >Get Started</button></a>
 </div>
-<div class="container-fluid readers">
+<!-- <div class="container popular" [@slideInLeft]="slideInLeft" >
+  <h2 class="text-center" ><b>Popular On Discuss 🔥</b></h2><hr>
   <div class="row">
-    <div class="col-lg-6 col-sm-6">
+    <div class="col-lg-4 col-sm-4"  *ngFor="let get of value">
+      <img [src]="get.image" width="200px" alt="article-img" class="text-center">
+      <h5>{{get.title}}</h5>
+    </div>
+ 
+  </div><hr>
+</div> -->
+<div class="container how">
+    <h1 class="text-center">How it Works</h1>
+  <div class="row" >
+    <div class="col-md-4 col-12"id="how-it-works">
+        <i class="fas fa-sign-in-alt"></i>
+        <h4 class="text-center">LOG IN / SIGN UP</h4>
+        <p class="text-center">Login or Signup to begin,once logged in you have access to lots of amazing stories by lots of amazing people you dont know who you might meet.</p>
+    </div>
+    <div class="col-md-4 col-12 update" id="how-it-works">
+        <i class="fas fa-clipboard-check"></i>
+        <h4 class="text-center">UPDATE PROFILE</h4>
+        <p class="text-center">For you to write an article, we will like you to update your profile so we can help you connect with others too.</p>
+    </div>
+    <div class="col-md-4 col-12" id="how-it-works">
+        <i class="fas fa-user-edit"></i>
+        <h4 class="text-center">START WRITING</h4>
+        <p class="text-center">Once your profile is updated you now can write your own article and interact with stories and meet new people.</p>
+    </div>
+    <a routerLink="/signup"><button type="button" class="get-started" >Get Started</button></a>
+
+  </div><hr class="ts">
+</div>
+<div class="container readers">
+  <div class="row">
+    <div class="col-lg-6 col-sm-6" [@fadeIn]="fadeIn" >
       <img src="../../../assets/undraw_absorbed_in_xahs.svg"  height="250px" width="500px"><span class="chev"><i class="fas fa-chevron-right"></i></span>
       <h3>150 Million happy readers and Authors.</h3>
         </div>
-    <div class="col-lg-6 col-sm-6">
-      <h4 style="margin-top: 50px"><b>We do things differently</b></h4>
-      <p  style="font-size: 18px;margin-top: 30px"> Discuss is a great place to read and learn from a wide range of authors. It’s not muddied up by ads. It’s not fake news. It feels like one of the few pure places to go online. <span style="color:  rgb(206, 132, 14)">Discuss is truly where ideas are born, shared, and spread.</span> Discuss is home to thousands of independent voices, and we combine humans and technology to find the best reading for you—and filter out the rest.</p>
+    <div class="col-lg-6 col-sm-6" [@bounce]="bounce" >
+      <h4 style="margin-top: 50px"><b>Read anywhere and anytime, Think Differently</b></h4>
+      <p  style="font-size: 18px;margin-top: 30px"> Discuss is a great place to read and learn from varieties of good writers. Articles that are good to read. It feels like one of the few pure places to go online. <span style="color:  rgb(206, 132, 14)">Discuss is truly where ideas are born, shared, and spread.</span> .</p>
     </div>
   </div>
 </div>
-<div class="container-fluid gif">
+<div class="container gif">
   <div class="row">
-    <div class="col-lg-6 col-md-7">
-        <h4 style="margin-top: 70px"><b>We do things differently</b></h4>
-     <p  style="font-size: 18px;margin-top: 50px"> Discuss is a great place to read and learn from a wide range of authors. It’s not muddied up by ads. It’s not fake news. It feels like one of the few pure places to go online. <span style="color:  rgb(206, 132, 14)">Discuss is truly where ideas are born, shared, and spread.</span> Discuss is home to thousands of independent voices, and we combine humans and technology to find the best reading for you—and filter out the rest.</p>
+    <div class="col-lg-6 col-md-7" [@bounce]="bounce">
+        <h4 style="margin-top: 70px"><b>Write about anything, It’s free</b></h4>
+     <p  style="font-size: 18px;margin-top: 50px"> You can write about anything,adventures, life stories, secular work, religion. Help people have what they can't get virtually anywhere.<span style="color:  rgb(206, 132, 14)">Discuss gives you the opportunity to speak to people and for people.</span>.</p>
     </div>
-    <div class="col-lg-6 col-md-5">
+    <div class="col-lg-6 col-md-5" [@fadeIn]="fadeIn">
      <span class="chev"><i class="fas fa-chevron-left"></i></span> <img src="../../../assets/undraw_blogging_vpvv.svg "  height="300px" width="800px"  style="margin-bottom: 50px">
     </div>
   </div>
@@ -86,12 +119,10 @@
         <div class="footer-widget about-widget">
           <h2>Active Links</h2>
           <ul>
-            <li><a href="">About Us</a></li>
-            <li><a href="">Write Article</a></li>
-            <li><a href="">Sign In</a></li>
-            <li><a href="">Subscribe</a></li>
-            <li><a href="">Make a Suggestion</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a routerLink="/articles">Write Article</a></li>
+            <li><a routerLink="/login">Sign In</a></li>
+            <li><a routerLink="">Make a Suggestion</a></li>
           </ul>
       
         </div>
@@ -100,53 +131,20 @@
         <div class="footer-widget contact-widget">
           <h2>Contact</h2>
           <div class="con-info">
-            <span>C.</span>
-            <p>Discuss </p>
-          </div>
-          <div class="con-info">
             <span>B.</span>
-            <p>20 MBONU STREET, D-LINE, PH, P.O. BOX 68 </p>
+            <p>4 MBONU STREET, D-LINE, PH, P.O. BOX 68 </p>
           </div>
           <div class="con-info">
             <span>T.</span>
-            <p>+53 345 7953 32453</p>
+            <p>+234 701 789 4218</p>
           </div>
           <div class="con-info">
             <span>E.</span>
-            <p>outfit7@bi.com</p>
+            <p>discuss@gmail.com</p>
           </div>
         </div>
       </div>
     </div>
-  </div> <p class=" text-white text-center mt-5" style="color: #fff">Copyright &copy; {{footerDate}} All rights reserved | Discuss Corporation</p>
-  <!-- <div class="social-links-warp">
-    <div class="container">
-      <div class="social-links">
-        <a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
-        <a href="" class="google-plus"><i class="fa fas-googleplus"></i><span>g+plus</span></a>
-        <a href="" class="pinterest"><i class="ion-social-pinterest"></i><span>pinterest</span></a>
-        <a href="" class="facebook"><i class="ion-social-facebook"></i><span>facebook</span></a>
-        <a href="" class="twitter"><i class="ion-social-twitter"></i><span>twitter</span></a>
-        <a href="" class="youtube"><i class="ion-social-youtube"></i><span>youtube</span></a>
-        <a href="" class="tumblr"><i class="ion-social-tumblr"></i><span>tumblr</span></a>
-      </div>
-     
-    </div>
-  </div> -->
+  </div> <p class=" text-white text-center mt-5" style="color: #fff">Made with <i class="fas fa-heart"></i> by <a href="https://twitter.com/buchi_princee" class="prince">Prince Lee</a></p>
 </section>
-<!-- Footer section end -->
-<!-- loader.component.html -->
 
-<!-- <div class="container-fluid blogPart shadow">
-  <div class="row">
-    <div class="col-md-6" *ngFor="let get of value">
-      <div routerLink="main-content/{{get.blog_id}}">
-       <span> <img  [src]="get.image" width="100px"></span>
-          <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
-          <p (click)="hov()">by : {{get.author}}</p>
-          <small>an hour ago</small> . <span>20 min read</span>
-      </div>
-      
-    </div>
-</div>
-</div> -->

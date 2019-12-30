@@ -1,9 +1,11 @@
-<div class="container-fluid">
-<div class="card">
-  <h1 class="text-center">Let's Get You Started.</h1>
-  <p class="text-center"> <span style="color:rgb(85, 32, 82) "><b>Hi,</b></span> Create an account to receive great stories in your inbox,<br> personalize your homepage, and follow authors and topics that you love.</p>
-  <img src="../../../assets/undraw_authentication_fsn5 (1).svg" width="300px" max-height="300px" alt="signup_svg">
-<div class="form">
+<div class="container">
+  <div  class="row">
+    <div  class="col-md-6 col-12">
+  <h2 class="text-center">Let's Get You Started.</h2>
+  <img src="../../../assets/undraw_authentication_fsn5 (1).svg" width="100%" max-height="300px" alt="signup_svg">
+    </div>
+  <div class="col-md-6 col-12 forms">
+    <p class="text-center"> <span style="color:rgb(85, 32, 82) "><b>Hi,</b></span> Create an account to receive great stories in your inbox,<br> personalize your homepage, and follow authors and topics that you love.</p>
     <form name="signupForm">
       <div class="form-group">
         <input type="name" name="name" [(ngModel)]="name" class="form-control" placeholder="Name" >
@@ -21,7 +23,6 @@
       <small class="text-center">Already have an account? <span><a routerLink="/login"><b>Log In</b></a></span></small>
 
     </form>
-    <!-- <small class="text-center">Already have an account? <span><a routerLink="/login"><b>Log In</b></a></span></small> -->
   </div>
   </div>
   </div>

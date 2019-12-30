@@ -34,8 +34,8 @@ move(){
 logOut(){
 this.gt = this.cookies.get('blog');
 if(this.gt){
-  this.cookies.delete('blog');
-  this.routes.navigate(['/login']);
+  this.cookies.deleteAll();
+  this.routes.navigate(['/articles']);
 }
  
 }
@@ -54,7 +54,7 @@ if(this.gt){
       });
     }else{
       this.routes.navigate(['/login']);
-      this.toaster.error('Please Login to Continue!','Security Center')
+      this.toaster.error('Please Login to Continue!','Security Center');
 
     }
     this.cookieValue = this.cookies.get('blog');

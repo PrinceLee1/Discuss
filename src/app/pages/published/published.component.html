@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of value">
-      <td><a routerLink="/main-content/{{item.blog_id}}">{{item.title}}  <i class="fas fa-external-link-alt"></i></a></td>
+      <td><a routerLink="/main-content/{{item.title}}/{{item.blog_id}}">{{item.title}}  <i class="fas fa-external-link-alt"></i></a></td>
       <td >{{item.category}}</td>
       <td style="cursor:pointer;" ><i class="fas fa-trash-alt" (click)="del()" ></i></td>
     </tr>

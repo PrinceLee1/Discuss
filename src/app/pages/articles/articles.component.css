@@ -1,18 +1,51 @@
 
-.sec-nav{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-z-index: 1;   
-background: whitesmoke;
-border-top: 4px solid rgb(104, 21, 49)
+
+
+
+
+.write{
+    background-color: rgb(104, 21, 49);
+    color: white;
+    border: 2px solid rgb(206, 132, 14);
+    width: 200px;
+    border-radius: 15px;
+    height: 40px
 }
-.sec-nav span , .home{
-    margin-left: 50px;
+.shadow{
+    border-top: 4px solid rgb(104, 21, 49)
+}
+
+.shadow a{
     color: rgb(104, 21, 49);
-    margin-top:150px;
-    cursor: pointer;
+}.con-read{
+    margin-top: 20px;
+    margin-left: 260px;
+    font-size: 18px
 }
 .blogPart h1{
-    margin-top: 200px
+    margin-top: 150px;
+    margin-left: 150px;
+    color: rgb(104, 21, 49);
+
+}
+.categories{
+    font-size: 18px;
+    color: rgb(82, 32, 82);
+    cursor: pointer;
+}
+.pop-story{
+    font-size: 28px;
+	margin-top: 15px;
+	color: #757575
+}
+@media screen and (max-width:375px){
+    .con-read{
+        margin-left: 110px;
+        font-size: 18px
+    }
+    .blogPart h1{
+        margin-left: 15px;
+        color: rgb(104, 21, 49);
+    
+    }
 }

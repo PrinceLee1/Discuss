@@ -1,5 +1,5 @@
 
- <nav class="sec-nav shadow" >
+ <!-- <nav class="sec-nav shadow" >
   <div class="div" >
  <span><b><a href="" class="home" > HOME</a></b></span><span (click)="go('Tricks')">TRICKS</span><span (click)="go('Technology')"> TECH</span><span (click)="go('Education')">EDUCATION</span><span (click)="go('Innovations')">INNOVATIONS</span><span (click)="go('Promotion')">PROMOTION</span><span (click)="go('Entertainment')"> ENTERTAINMENT</span><span class="dropdown">
   <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">MORE CATEGORIES
@@ -7,7 +7,7 @@
   <ul class="dropdown-menu">
     <li (click)="go('Innovations')">DEVICES</li><br>
     <li (click)="go('Sex')">SEX</li><br>
-    <li (click)="go('Offers')">OFFERS</li><br>
+    <li (click)="go('Self')">SELF</li><br>
     <li (click)="go('Books')">BOOKS</li><br>
     <li (click)="go('Wild-Life')">WILD-LIFE</li><br>
     <li (click)="go('Religion')">RELIGION</li><br>
@@ -16,21 +16,36 @@
   </ul>
 </span><hr>
 </div>
-</nav> 
-<h1 class="text-center" *ngIf="article">No Article in this Category!</h1>
+</nav>  -->
 
 <div class="container-fluid blogPart">
   <div class="row">
-    <div class="col-md-12 col-sm-12" *ngFor="let get of value">
-      <div routerLink="/main-content/{{get.blog_id}}">
-       <span> <img  [src]="get.image" width="100px"></span>
-          <h4 style="cursor: pointer">{{get.title}}</h4><span>Category : <mark>{{get.category}}</mark></span>
-          <p (click)="hov()">by : {{get.author}}</p>
-          <small>an hour ago</small> . <span>20 min read</span>
+    <div class="col-md-5 col-sm-5"  [@slideInLeft]="slideInLeft" >
+      <h2>Start sharing Stories</h2>
+      <p class="pop-story">Did you discovered anything <br>new or know what can make impacts?<br> Write about it here and <br>showcase your knowledge.<br> People get hired by sharing <br>knowledge actively on Discuss.</p>
+      <button type="button" class="write" (click)="write()">Write Article</button><hr>
+      <div class="filter">
+        <h2 class="text-center">Select any category and we will filter for you</h2><hr>
+        <div class="row">
+          <div class="col-md-4 col-12"  *ngFor="let cat of inputs">
+            <div (click)="go(cat.name)" class="categories">{{cat.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 col-sm-7 shadow "  [@slideInRight]="slideInRight">
+      <div class="row">
+
+<h1 class="text-center" *ngIf="article"  [@fadeIn]="fadeIn">No Article in this Category!</h1>
+<a href="articles" *ngIf="article" class="con-read"[@fadeIn]="fadeIn" >Continue Reading</a>
+        <div class="col-md-6 col-12" *ngFor="let get of value">
+            <span> <img  [src]="get.image" width="80%"  style="margin-top: 20px"></span>
+            <h4><a routerLink="/main-content/{{get.title}}/{{get.blog_id}}">{{get.title}}</a> </h4><span>Category : <mark>{{get.category}}</mark></span>
+       <br><img [src]="get.profile_picture"  width="45px" style="margin-top: 2px;border-radius: 280px;border: 2px solid rgb(85, 32, 82)"><span>  Written by :<span style="color:rgb(85, 32, 82) "> {{get.author}}</span></span><br>
+        </div>
       </div>
       
     </div>
-  
     
 </div>
 </div>

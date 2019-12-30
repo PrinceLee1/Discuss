@@ -28,6 +28,7 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 import { DraftsComponent } from './pages/drafts/drafts.component';
 import { PublishedComponent } from './pages/published/published.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     ArticlesComponent,
     DraftsComponent,
     PublishedComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

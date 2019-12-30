@@ -2,11 +2,13 @@
 h2{
   margin-top: 50px;
   font-size: 40px
-
+}
+mark{
+  text-transform: uppercase
 }
 .arti{
   margin-top: 30px;
-  font-size: 23px
+  font-size: 20px
 }
 
 .recent{
@@ -47,4 +49,44 @@ overflow: scroll
   position: relative;
   margin-left: 0px
  }
+}
+@media screen and (max-width:768px){
+  .recent{
+    margin-top: 50px;
+    border-top: 2px solid rgba(118, 16, 128, 0.7);
+    height:100%;
+    width: 100%;
+    position: relative;
+    margin-left: 0px
+   }
+}
+.author b{
+  margin-left: 20px;
+  transform: translateY(80px);
+  text-transform: uppercase;
+
+}
+.auth-img img{
+margin-bottom: 2rem;
+border-radius: 12px
+}
+li{
+  list-style: none;
+}
+li:hover{
+  color: rgb(85, 32, 82);
+  cursor: pointer;
+
+}
+footer{
+  margin-top: 2rem
+}
+footer i{
+  margin-left: 30px;
+  /* float: right; */
+  font-size: 20px;
+  margin-bottom: 2rem
+}
+footer i:hover{
+  color: rgb(85, 32, 82);
 }
