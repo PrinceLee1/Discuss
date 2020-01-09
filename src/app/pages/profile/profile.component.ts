@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ApicallsService } from 'src/app/services/apicall.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
-import { Router,ActivatedRoute } from '@angular/router';
+import { ApicallsService } from 'src/app/services/apicall.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -68,7 +68,6 @@ uploadPic(file:FileList){
   this.formData.append("image",this.fileToUpload,this.fileToUpload.name),
   this.formData.append("key","acctpic");
   this.formData.append('id',this.cookieValue);
-  console.log(this.formData);
   
   this.apicall.sendData(this.formData).subscribe(
     (res)=>{ this.prog = false;this.toaster.success('Profile image uploaded successfully','Security Center');

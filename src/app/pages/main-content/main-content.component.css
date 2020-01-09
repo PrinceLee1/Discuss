@@ -88,5 +88,12 @@ footer i{
   margin-bottom: 2rem
 }
 footer i:hover{
-  color: rgb(85, 32, 82);
+  color: white;
+  background:  rgb(85, 32, 82);
+  width: 29px;
+  border-radius: 18px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-out
+
 }

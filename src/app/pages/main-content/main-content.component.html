@@ -14,10 +14,11 @@
         <div class="col-md-8 col-12">
       <h4><b>Author</b></h4>
       <span class="auth-img"> <img [src]="get.profile_picture" width="200px" height="180px"></span><span class="author"> <b>{{get.author}}</b></span>
-      <p>Metus lobortis tortor tincidunt himenaeos habitant quis <br>dictumst proin odio sagittis purus mi, nec taciti himenaeos habitant quis in sit varius.</p>
+    
       </div>
       <div class="col-md-4 col-12">
       <footer>
+        <p class="text-center">Follow on:</p>
         <i class="fab fa-twitter"></i>
         <i class="fab fa-linkedin-in"></i>
         <i class="fab fa-instagram"></i>
@@ -35,7 +36,7 @@
             <img [src]="recent.image" width="110px" style="margin-top: 8px" >
           </div>
           <div class="col-md-6 col-sm-5">
-            <a routerLink="main-content/{{recent.title}}/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
+            <a routerLink="/main-content/{{recent.title}}/{{recent.blog_id}}" style="margin-top:30px">{{recent.title}}.</a><hr>
         </div>
         </div>
       </div>

@@ -57,7 +57,7 @@ export class ArticlesComponent implements OnInit {
                         this.value = val['info'];
                         this.routes.navigate(['/articles']);
                         this.localStorage.removeItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h');
-                        // this.article = true;
+                        this.article = true;
                       } else if(this.value == 0 ){
                         this.article = true;
                       }
@@ -82,7 +82,6 @@ if(this.cookieValue){
 }
   ngOnInit() {
     this.getData = {'key':'allpost'};
-    console.log(this.getData)
     this.apicall.postData(this.getData).subscribe(
       val =>{
         if(val['code']== "00"){

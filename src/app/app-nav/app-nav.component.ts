@@ -14,7 +14,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class AppNavComponent implements OnInit {
   cookieValue: any;
   acctInfo: { 'acctinfo': any; 'key': string; };
-  value: any;
+  value;today: any;
 isnotLogin = true;
   constructor(private localStorage: LocalStorage,
     private apicall : ApicallsService,
@@ -39,7 +39,7 @@ isnotLogin = true;
               this.isnotLogin = true;
             }
           });
-
+// this.today = new Date()
   }
   
 

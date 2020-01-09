@@ -1,13 +1,9 @@
 <div class="container">
   <div class="profile shadow">
-    <h5><b>User Profile</b></h5><hr>
+    <h4 *ngIf="prof"><b>{{value[0]}}</b></h4>
     <div class="row">
       <div class="col-lg-4 col-sm-6">
-        <img [src]="value[8]" width="200px" class="img-responsive profile-img" alt="profile_image" *ngIf="prof">
-        <h4 class="text-center" *ngIf="prof">{{value[0]}}</h4>
-        <i class="fas fa-globe" *ngIf="prof"></i>  <span style="margin-left: 8px" *ngIf="prof"> {{value[1]}}</span><br>
-        <i class="fas fa-link" *ngIf="prof"></i><a [href]="value[2]" style="margin-left: 8px" *ngIf="prof">{{value[2]}}</a><br>
-        <i class="fas fa-briefcase" *ngIf="prof"></i> <span style="margin-left: 8px" *ngIf="prof">{{value[3]}}</span><br>
+        <img [src]="value[8]" width="200px" class="img-responsive profile-img" alt="profile_image" *ngIf="prof">       
     </div>
     <div class="col-lg-8 col-sm-6">
         <h2>Account Information </h2><hr>
@@ -267,82 +263,8 @@
 
           </div>
           <div class="form-group">
-              <p>State*</p>
-              <select class="form-control" [(ngModel)]="state" name="state"  [value]="value[6]">
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Algeria">Algeria</option>
-  
-  
-              </select>
+              <p>About Me*</p>
+            <textarea class="form-control" [(ngModel)]="state" name="state" [value]="value[6]" placeholder="Biography"></textarea>
             </div>
             <div class="form-group">
                 <p>Address/Street*</p>

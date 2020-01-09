@@ -48,23 +48,25 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="nav">
+      <ul  class="nav justify-content-center">
         <li class="nav-item">
           <a routerLink="/articles"> Write</a>    
         </li>
       <li class="nav-item" *ngIf="isnotLogin">
           <a routerLink="/login"> Login</a>    
         </li>
-        <!-- <li class="nav-item" *ngIf="isnotLogin">
-         <a routerLink="/dashboard"> <img [src]="value[8]"  width="45px" style="margin-left: 40px;border-radius: 280px;border: 2px solid rgb(176, 177, 174)"></a>
-        </li> -->
+    
         <li class="nav-item" *ngIf="isnotLogin">
           <a routerLink="/signup"> Get Started</a>    
         </li>
+        <!-- <li class="nav-item" >
+            {{today}}
+            </li> -->
     </ul>
 
   </div>
 </nav>
+
 <router-outlet></router-outlet>
 
   
