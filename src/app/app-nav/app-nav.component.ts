@@ -24,6 +24,10 @@ isnotLogin = true;
   private activedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+  const nav=  document.getElementsByClassName('nav-item');
+if (window.scroll){
+  
+}
     this.cookieValue = this.cookies.get('blog');
     this.acctInfo = {'acctinfo':this.cookieValue,'key':'19'}
         this.apicall.postData(this.acctInfo).subscribe(
@@ -39,7 +43,7 @@ isnotLogin = true;
               this.isnotLogin = true;
             }
           });
-// this.today = new Date()
+  //  this.today = new Date();
   }
   
 

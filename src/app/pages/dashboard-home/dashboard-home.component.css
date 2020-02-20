@@ -65,7 +65,7 @@ button[class="pub"]{
     width:75% !important;
     border-radius: 15px; 
 }
-button[class="com"]{
+/* button[class="com"]{
     background: orangered;
     margin-top: 40px;
    border: 0px;
@@ -73,7 +73,7 @@ button[class="com"]{
    margin-left: 20px;
    width:75% !important;
    border-radius: 15px;
-}
+} */
 h5 a{
     color: #fff;    
     margin-left: 50px;

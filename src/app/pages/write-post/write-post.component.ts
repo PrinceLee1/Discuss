@@ -39,9 +39,7 @@ prog;photo = false;
     // public ngProgress: NgProgress
     ) { }
 submitPost(x:NgForm){
-  // console.log(x.value.article);
-  // this.ngProgress.start();
-  // this.prog = true;
+  this.apicall.checkConnectionStatus();
   this.blog_id = this.activatedRoute.snapshot.paramMap.get('id');
   let blog ={
     title : this.fetch,
@@ -59,7 +57,6 @@ submitPost(x:NgForm){
        this.toaster.error(val['info'],'Security Center');
       }else if(val['code'] == '00'){
         this.toaster.success(val['info'],'Security Center');
-// this.prog = false;
         this.routes.navigate(['dashboard/posts']);
       }
       
@@ -67,17 +64,14 @@ submitPost(x:NgForm){
 
 }
 uploadPic(file:FileList){
-// console.log(file);
-
+  this.apicall.checkConnectionStatus();
 this.fileToUpload = file.item(0);
 var imgReader = new FileReader();
-imgReader.onload =(event:any) =>{
-  this.imageUrl = event.target.result;
-}
-imgReader.readAsDataURL(this.fileToUpload)
-// this.prog = false;
-}
+imgReader.onload =(event:any) =>{this.imageUrl = event.target.result;}
+imgReader.readAsDataURL(this.fileToUpload)}
+
 addImage(){
+  this.apicall.checkConnectionStatus();
 this.formData = new FormData();
 this.formData.append("image",this.fileToUpload,this.fileToUpload.name),
 this.formData.append("blog_id",this.blog_id),
@@ -87,17 +81,14 @@ if(this.formData.append("image",this.fileToUpload,this.fileToUpload.name) !==nul
     this.prog = true;
   this.photo = true;
   this.apicall.sendData(this.formData).subscribe(
-  (res)=>{ this.prog = false;this.toaster.success('Image uploaded successfully','Security Center')},)
+  (res)=>{ this.prog = false;this.toaster.success('Image uploaded successfully','Security Center')},);
 this.photo = false
 }else{
   this.toaster.error('Please an Image is needed','Security Center')
-
-}
-// console.log(this.formData);
-
-
+    }
 }
   ngOnInit() {
+    this.apicall.checkConnectionStatus();
     this.blog_id = this.activatedRoute.snapshot.paramMap.get('id');
     this.cookieValue = this.cookies.get('blog');
     this.getData = {'key':'5'};
@@ -105,7 +96,6 @@ this.photo = false
       val =>{
         if(val['code']== "00"){
           this.value = val['info'];
-          console.log(this.value);
         }else if(val['code']== "01"){
           this.toaster.error(val['info'],'Security Center')
         }
@@ -117,7 +107,6 @@ this.photo = false
           if(val['code']== "00"){
             this.fetch = val['info'][0].title
             this.cat = val['info'][0].category
-            console.log(this.fetch)
           }else if(val['code']== "01"){
             this.toaster.error(val['info'],'Security Center');
           }

@@ -33,6 +33,7 @@ constructor(private apicall : ApicallsService,private routes : Router,private to
   
  }
   ngOnInit() {
+    this.apicall.checkConnectionStatus();
   }
 
 }

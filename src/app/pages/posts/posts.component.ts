@@ -51,7 +51,7 @@ del(){
     } 
   }
   ngOnInit() {
-
+    this.apicall.checkConnectionStatus();
     this.cookieValue = this.cookies.get('blog');
     this.getdata = {'key':'5'};
     this.apicall.postData(this.getdata).subscribe(
@@ -89,12 +89,12 @@ del(){
   }
 checkUser(){
   this.cookieValue = this.cookies.get('blog');
-  this.acctInfo = {'acctinfo':this.cookieValue,'key':'19'}
+  this.acctInfo = {'acctinfo':this.cookieValue,'key':''}
       this.apicall.postData(this.acctInfo).subscribe(
         mes =>{
         if(mes['code'] == '00'){
             this.check = mes['info'];
-          }else if(this.check == null){
+          }else if(mes['code'] == '01'){
             this.routes.navigate(['/dashboard/profile']);
             this.toaster.error('Please Update your Profile!.','Security Center');
 
@@ -104,23 +104,25 @@ checkUser(){
 }
 
   submitPost(x:NgForm){
-    this.blogId = this.activedRoute.snapshot.paramMap.get('id');
-    let blog ={
-      title : x.value.title,
-      category : x.value.category,
-      author_id:this.cookieValue,
-      key : '10'
-    }
-    
-    this.apicall.postData(blog).subscribe(
-      val =>{
-        if(val['code'] == '01'){
-         this.toaster.error(val['info'],'Security Center');
-        }else if(val['code'] == '00'){
-          // this.toaster.success(val['info'],'Security Center');
-          this.routes.navigate(['dashboard/write-post',val['info']]);
-        }
-        
-      });
+    this.apicall.checkConnectionStatus();
+          this.blogId = this.activedRoute.snapshot.paramMap.get('id');
+          let blog ={
+            title : x.value.title,
+            category : x.value.category,
+            author_id:this.cookieValue,
+            key : '10'
+          }
+          
+          this.apicall.postData(blog).subscribe(
+            val =>{
+              if(val['code'] == '01'){
+               this.toaster.error(val['info'],'Security Center');
+              }else if(val['code'] == '00'){
+                // this.toaster.success(val['info'],'Security Center');
+                this.routes.navigate(['dashboard/write-post',val['info']]);
+              }
+              
+            });
+   
   }
 }

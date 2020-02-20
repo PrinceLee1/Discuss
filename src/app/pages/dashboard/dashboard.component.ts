@@ -36,10 +36,18 @@ this.gt = this.cookies.get('blog');
 if(this.gt){
   this.cookies.deleteAll();
   this.routes.navigate(['/articles']);
-}
- 
-}
+      }
+  }
+  checkCookie(){
+    if(this.cookies.get('blog')){
+      return true;
+    }else{
+      this.routes.navigate(['/login']);
+      this.toaster.error('Please Login to Continue!','Security Center');
+    }
+  }
   ngOnInit() {
+    this.apicall.checkConnectionStatus();
     if(this.cookies.get('blog')){
        this.load = true
   this.cookieValue = this.cookies.get('blog');

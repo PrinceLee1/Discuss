@@ -2,7 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 *{
-    /* font-family: 'Nanum Myeongjo', serif; */
+    font-family: 'Nanum Myeongjo', serif;
     /* font-family: 'El Messiri', sans-serif; */
     font-family:  medium-marketing-display-font, Georgia, Cambria, "Times New Roman", Times, serif;
 }

@@ -28,7 +28,7 @@
         <h2 class="text-center">Select any category and we will filter for you</h2><hr>
         <div class="row">
           <div class="col-md-4 col-12"  *ngFor="let cat of inputs">
-            <div (click)="go(cat.name)" class="categories">{{cat.name}}</div>
+            <a href="#ty" (click)="go(cat.name)" class="categories" >{{cat.name}}</a>
           </div>
         </div>
       </div>
@@ -36,9 +36,7 @@
     <div class="col-md-7 col-sm-7 shadow "  [@slideInRight]="slideInRight">
       <div class="row">
 
-<h1 class="text-center" *ngIf="article"  [@fadeIn]="fadeIn">No Article in this Category!</h1>
-<a href="articles" *ngIf="article" class="con-read"[@fadeIn]="fadeIn" >Continue Reading</a>
-        <div class="col-md-6 col-12" *ngFor="let get of value">
+        <div id="ty" class="col-md-6 col-12" *ngFor="let get of value">
             <span> <img  [src]="get.image" width="80%"  style="margin-top: 20px"></span>
             <h4><a routerLink="/main-content/{{get.title}}/{{get.blog_id}}">{{get.title}}</a> </h4><span>Category : <mark>{{get.category}}</mark></span>
        <br><img [src]="get.profile_picture"  width="45px" style="margin-top: 2px;border-radius: 280px;border: 2px solid rgb(85, 32, 82)"><span>  Written by :<span style="color:rgb(85, 32, 82) "> {{get.author}}</span></span><br>

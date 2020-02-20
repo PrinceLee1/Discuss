@@ -27,6 +27,7 @@ this.apicall.postData(this.forgotPass).subscribe(
   });
 }
   ngOnInit() {
+    this.apicall.checkConnectionStatus();
   }
 
 }

@@ -46,14 +46,14 @@ li a{
     text-decoration: none;
     color: rgb(104, 21, 49);
 }
-li a:hover{
+/* li a:hover{
 padding: 5px;
 background: rgb(104, 21, 49);
 color: aliceblue;
 	border: 2px solid rgb(206, 132, 14) ;
 	border-radius: 20px
 
-}
+} */
 
 .started{
     color: black;

@@ -30,10 +30,10 @@ prof = true;
   ) { }
 
   accountInfo(){
+    this.apicall.checkConnectionStatus();
     this.cookieValue = this.cookies.get('blog');
 this.acctinput = {
   'name':this.name,'country':this.country,'state':this.state,'address':this.address,'phone':this.phone,'facebook':this.facebook,'twitter':this.twitter,'gmail': this.gmail,'user':this.cookieValue,'key':'account'};
-    
   this.apicall.postData(this.acctinput).subscribe(
     res =>{
       if(res['code'] == '01'){
@@ -51,7 +51,7 @@ this.acctinput = {
 
 
 uploadPic(file:FileList){  
- 
+  this.apicall.checkConnectionStatus();
   this.fileToUpload = file.item(0);
   var imgReader = new FileReader();
   imgReader.onload =(event:any) =>{
@@ -61,6 +61,7 @@ uploadPic(file:FileList){
   this.photo = false
   }
   addImage(){
+    this.apicall.checkConnectionStatus();
      this.photo = true;
     this.cookieValue = this.cookies.get('blog');
     this.prog = true;
@@ -68,7 +69,6 @@ uploadPic(file:FileList){
   this.formData.append("image",this.fileToUpload,this.fileToUpload.name),
   this.formData.append("key","acctpic");
   this.formData.append('id',this.cookieValue);
-  
   this.apicall.sendData(this.formData).subscribe(
     (res)=>{ this.prog = false;this.toaster.success('Profile image uploaded successfully','Security Center');
     this.routes.navigateByUrl('/',{skipLocationChange:true}).then(()=>

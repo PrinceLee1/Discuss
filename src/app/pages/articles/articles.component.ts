@@ -6,6 +6,8 @@ import { Router} from '@angular/router';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { slideInRight,slideInLeft,fadeIn} from 'ng-animate';
 import { ToastrService } from 'ngx-toastr';
+import { ConnectionService } from 'ng-connection-service';
+
 @Component({
   selector: 'app-articles',
   templateUrl: './articles.component.html',
@@ -25,16 +27,20 @@ import { ToastrService } from 'ngx-toastr';
   ],
 })
 export class ArticlesComponent implements OnInit {
+  
   public getData;value;slideInLeft;slideInRight:any;
+  public onlineOffline: boolean = navigator.onLine;
   cookieValue: any;
   getdata: { 'key': string; };
   inputs: any;
-  
+  isConnected = true;
+  status = 'ONLINE';
   constructor(private apicall :ApicallsService,
      private toaster :ToastrService,
      private cookies : CookieService,
      private localStorage: LocalStorage,
-     private routes :Router) { }
+     private connectionService: ConnectionService,
+     private routes :Router) {}
 
      article = false;
      go(x){
@@ -57,30 +63,27 @@ export class ArticlesComponent implements OnInit {
                         this.value = val['info'];
                         this.routes.navigate(['/articles']);
                         this.localStorage.removeItem('c_a_t_e_g_o_r_y_S_e_a_r_c_h');
-                        this.article = true;
+                        // this.article = true;
                       } else if(this.value == 0 ){
-                        this.article = true;
+                        // this.article = true;
                       }
                     });
                   });
           }
-
-
         }
       );
         }
-   
+
 write(){
   this.cookieValue = this.cookies.get('blog');
 if(this.cookieValue){
   this.routes.navigate(['dashboard/posts']);
-
-}else{
-  this.toaster.error('Please you need to Login to Write an Article!','Security Center');
-
-}
+      }else{
+        this.toaster.error('Please you need to Login to Write an Article!','Security Center');
+    }
 }
   ngOnInit() {
+    this.apicall.checkConnectionStatus();
     this.getData = {'key':'allpost'};
     this.apicall.postData(this.getData).subscribe(
       val =>{

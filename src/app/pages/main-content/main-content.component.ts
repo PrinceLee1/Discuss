@@ -25,14 +25,8 @@ export class MainContentComponent implements OnInit {
     private cookies : CookieService,
     private toaster :ToastrService) { }
 
-    
-like(){
-  alert(tada)
-}
-
   ngOnInit() {
-  //  this.carryName= {'get.author':this.writerImage}
-  //  alert(this.carryName)
+    this.apicall.checkConnectionStatus();
     this.blogId = this.activedRoute.snapshot.paramMap.get('id');
     this.getData = {'blogId':this.blogId,'key':'6'};
     this.apicall.postData(this.getData).subscribe(

@@ -15,15 +15,13 @@
     border-radius: 6px;
     color: aliceblue;
     border: 0px;
-    width: 50%;
+    width: 200px;
     height: 40px;
-    margin-left: 180px
 }
 .img-div{
     margin-top: 8px;
     border: 4px rgb(85, 32, 82) solid;
-    width: 210px ;
-    margin-left: 300px
+    width: 208px ;
 }
 .post{
     margin-left: 20px;
@@ -32,8 +30,6 @@
 .write{
     height: 900px;
     width: 90%;
-    /* box-shadow: 2px 2px 5px rgb(104, 21, 49); */
-    /* margin-left: 100px; */
     border-radius: 12px
 }
 .proress{
@@ -44,6 +40,6 @@ editor{
     height: 300px
 }
 .btn{
-    width: 60%;
-    margin-left: 180px
+    width: 200px;
+    margin-left: 60px
 }

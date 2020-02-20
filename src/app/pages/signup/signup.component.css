@@ -29,93 +29,10 @@ button{
     color: aliceblue;
 }
 button:hover{
-    color: aliceblue;   
-} 
-small{
-    margin-top: 20px
-}
-/* .card{
-    height: 480px;
-    width: 950px;
-    margin-left: 200px;
-    margin-top: 50px;
-    box-shadow: 0px 4px 6px 2px gray;
-    box-sizing: border-box
-}
-img{
-    margin-left: 100px;
-    margin-top: 20px
-}
-
-form{
-    margin-left: 200px;
-  transform: translateY(-85%)
-}
-h1{
-    margin-top: 10px;
-    font-style: italic;   
-}
-p{
-    font-size: 20px;
-    margin-top: 3%
-}
-small{
-    margin-left: 400px;
-}
-a{
-    text-decoration-color: gray;
-    color: rgb(85, 32, 82)
-}
-button{
-    margin: 0px 10px 0px 350px;
-    width: 300px;
-    background: linear-gradient(rgb(104, 21, 49),rgb(94, 41, 91));
     color: aliceblue;
+  border: 2px solid rgb(206, 132, 14);
+} input:hover{
+    border: 2px solid rgb(206, 132, 14);}
+small{
+    margin-top: 20px
 }
-button:hover{
-    color: aliceblue;   
-}
-input[type="name"] {
-    width: 300px;
-   margin: 20px 10px 0px 350px;
-
-}
-input[type="surname"] {
-    width: 300px;
-   margin: 0px 10px 0px 350px;
-
-}
-input[type="text"] {
-    width: 300px;
-   margin: 0px 10px 0px 350px;
-
-}
-input[type="password"] {
-    width: 300px;
-   margin: 0px 10px 0px 350px;
-
-} */
-/**********MEDIA QUERIES ***********/
-/* @media screen and (max-width:375px){
-    h2{
-        font-size: 28px
-    }p{font-size: 18px}
-    .card{
-        margin-left: 3px;
-        max-width: 330px;
-        height:800px;
-    }
-    img{
-        margin-left: 33px;
-        width: 250px
-    }
-    form{
-transform: translateX(-536px)
-    }
-    small{
-        transform: translateX(60px);
-        display: grid;
-        font-size: 15px;
-        text-transform: capitalize
-    }
-} */
